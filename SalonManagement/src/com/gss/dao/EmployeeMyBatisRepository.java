@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.gss.model.Employee;
 import com.gss.model.EmployeeCategory;
+import com.gss.model.Job;
 
 public class EmployeeMyBatisRepository implements EmployeeRepository{
 
@@ -56,6 +57,12 @@ public class EmployeeMyBatisRepository implements EmployeeRepository{
 
 	@Override
 	public List<EmployeeCategory> getAllCategory() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Job> getEmployeeJob(int empID) {
 		// TODO Auto-generated method stub
 		return null;
 	}

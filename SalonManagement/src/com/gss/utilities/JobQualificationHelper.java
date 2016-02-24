@@ -55,5 +55,57 @@ public class JobQualificationHelper {
 		return finalList;
 		
 	}
+	
+	public List<Job> getUpdatedJob(List<Job> newJobs, List<Job> oldJobs){
+		
+		List<Job> updatedList = new ArrayList<Job>();
+		List<Job> oldActiveJob = new ArrayList<Job>();
+		Job newJob;
+		Job oldJob;
+		
+		for(int intOuter = 0; intOuter < oldJobs.size(); intOuter++){
+			
+			oldJob = oldJobs.get(intOuter);
+			
+			if(oldJob.getIntJobStatus() == 1){	
+				for(int intInner = 0; intInner < newJobs.size(); intInner++){
+				
+					newJob = newJobs.get(intInner);
+				
+					if(newJob.getStrJobDesc().equals(oldJob.getStrJobDesc()) && newJob.getIntJobStatus() == oldJob.getIntJobStatus()){
+						//do nothing
+					}
+				
+					else if(intInner == newJobs.size()){
+					
+					oldJob.setIntJobStatus(0);
+					updatedList.add(oldJob);
+					}
+				}
+			}
+		}
+		
+		for(int intOuter = 0; intOuter < newJobs.size(); intOuter++){
+			
+			newJob = newJobs.get(intOuter);
+			
+			for(int intInner = 0; intInner < oldJobs.size(); intInner++){
+				
+				oldJob = oldJobs.get(intInner);
+				
+				if(newJob.getStrJobDesc().equals(oldJob.getStrJobDesc()) && newJob.getIntJobStatus() == oldJob.getIntJobStatus()){
+					//do nothing
+				}
+				else if(newJob.getStrJobDesc().equals(oldJob.getStrJobDesc()) && newJob.getIntJobStatus() != oldJob.getIntJobStatus()){
+					updatedList.add(newJob);
+				}
+				else if(intInner == oldJobs.size()){
+					updatedList.add(newJob);
+				}
+			}
+		}
+		
+		return updatedList;
+	}
 
 }

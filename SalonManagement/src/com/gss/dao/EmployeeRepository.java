@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.gss.model.Employee;
 import com.gss.model.EmployeeCategory;
+import com.gss.model.Job;
 
 public interface EmployeeRepository {
 	
@@ -18,5 +19,7 @@ public interface EmployeeRepository {
 	public boolean updateEmployee(Employee emp);
 	
 	public List<EmployeeCategory> getAllCategory();
+	
+	public List<Job> getEmployeeJob(int empID);
 
 }

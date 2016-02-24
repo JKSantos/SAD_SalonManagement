@@ -376,4 +376,36 @@ public class EmployeeJDBCRepository implements EmployeeRepository{
 		}
 	}
 
+	@Override
+	public List<Job> getEmployeeJob(int empID) {
+		
+		JDBCConnection jdbc = new JDBCConnection();
+		Connection con = jdbc.getConnection();
+		String query = "CALL getEmpJob(?);";
+		List<Job> empJob = new ArrayList<Job>();
+		
+		try{
+			PreparedStatement pre = con.prepareStatement(query);
+			pre.setInt(1, empID);
+			ResultSet set = pre.executeQuery();
+			
+			while(set.next()){
+				String strDesc = set.getString(1);
+				int intStat = set.getInt(2);
+				Job job = new Job(strDesc, intStat);
+				empJob.add(job);
+			}
+			
+			pre.close();
+			set.close();
+			con.close();
+			
+			return empJob;
+		}
+		catch(Exception e){
+			System.out.println(e.fillInStackTrace());
+			return null;
+		}
+	}
+
 }
