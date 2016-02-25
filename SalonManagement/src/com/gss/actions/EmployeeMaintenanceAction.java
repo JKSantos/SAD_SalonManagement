@@ -2,12 +2,14 @@ package com.gss.actions;
 
 import java.util.List;
 
+import com.gss.model.Employee;
 import com.gss.model.EmployeeCategory;
 import com.gss.service.EmployeeServiceImpl;
 
 public class EmployeeMaintenanceAction {
 
 	private List<EmployeeCategory> empCategory;
+	private List<Employee> empList;
 	
 	public String execute(){
 		
