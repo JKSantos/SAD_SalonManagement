@@ -15,6 +15,7 @@ public class EmployeeMaintenanceAction {
 		
 		EmployeeServiceImpl empService = new EmployeeServiceImpl();
 		this.empCategory = empService.getAllCategory();
+		this.setEmpList(empService.getAllEmployees());
 		
 		return "success";
 	}
@@ -25,5 +26,13 @@ public class EmployeeMaintenanceAction {
 
 	public void setEmpCategory(List<EmployeeCategory> empCategory) {
 		this.empCategory = empCategory;
+	}
+
+	public List<Employee> getEmpList() {
+		return empList;
+	}
+
+	public void setEmpList(List<Employee> empList) {
+		this.empList = empList;
 	}
 }

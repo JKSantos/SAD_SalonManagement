@@ -91,7 +91,7 @@
         <article>
           <div class="wrapper">
                     <div class="aside aside1 z-depth-barts">
-                      <header><h4>Create Employee</h4><div class="divider"></div></header>
+                      <header><h4>Employee Maintenance</h4><div class="divider"></div></header>
 
                       <div class="row">
                           <form class="col s12" action="createEmployee" onsubmit="return passvalidation()" method="post" enctype="multipart/form-data">
@@ -222,6 +222,7 @@
                                   </div>
                               </div>
 
+
                               <!-- ADD OPTION POSITION -->
                                 
 
@@ -257,25 +258,19 @@
                                           </tr>
                                         </thead>
                                         <tbody>
+                                        
+                                        
+                                        	 <c:forEach items="${empList}" var="employee">
+                                        	 <tr>
+                                          		<td>${employee.strEmpFirstName} ${employee.strEmpLastName}</td>
+                                            	<td>Cashier</td>
+                                            	<td><button style="padding: 0px;" class="waves-effect waves-orange transparent btn-flat"><i class="material-icons">edit</i></button><button style="padding: 0px; margin-left:15px;" class="waves-effect waves-orange transparent btn-flat"><i class="material-icons">delete</i></button></td>
+                                          		</tr>
+                                          	</c:forEach> 
+                                          
+                    
                                         <tr>
-                                            <td>John Angelo Castillo</td>
-                                            <td>Cashier</td>
-                                            <td><button style="padding: 0px;" class="waves-effect waves-orange transparent btn-flat"><i class="material-icons">edit</i></button><button style="padding: 0px; margin-left:15px;" class="waves-effect waves-orange transparent btn-flat"><i class="material-icons">delete</i></button></td>
-                                          </tr>
-                                        </tr>
-                                        <tr>
-                                            <td>John Angelo Castillo</td>
-                                            <td>Cashier</td>
-                                            <td><button style="padding: 0px;" class="waves-effect waves-orange transparent btn-flat"><i class="material-icons">edit</i></button><button style="padding: 0px; margin-left:15px;" class="waves-effect waves-orange transparent btn-flat"><i class="material-icons">delete</i></button></td>
-                                          </tr>
-                                        </tr>
-                                        <tr>
-                                            <td>John Angelo Castillo</td>
-                                            <td>Cashier</td>
-                                            <td><button style="padding: 0px;" class="waves-effect waves-orange transparent btn-flat"><i class="material-icons">edit</i></button><button style="padding: 0px; margin-left:15px;" class="waves-effect waves-orange transparent btn-flat"><i class="material-icons">delete</i></button></td>
-                                          </tr>
-                                        </tr>
-                                      </table>
+                                         
                                       <ul class="pagination right">
                                             <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
                                             <li class="active orange"><a href="#!">1</a></li>
