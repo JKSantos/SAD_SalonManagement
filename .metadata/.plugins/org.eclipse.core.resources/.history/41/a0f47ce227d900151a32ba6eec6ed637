@@ -1,0 +1,17 @@
+package com.gss.action;
+
+import java.util.List;
+
+import com.gss.model.EmployeeCategory;
+
+public class EmployeeMaintenanceAction {
+
+	private List<EmployeeCategory> empCategory;
+	
+	public String execute(){
+		
+		
+		return "success";
+	}
+	
+}

@@ -1,0 +1,27 @@
+package com.gss.utilities;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class JobQualificationHelper {
+	
+	public List<String[]> checkChanges(List<String[]> newList, List<String[]> oldList){
+		
+		List<String[]> finalList = new ArrayList<String[]>();
+		
+		for(int intOuter = 0; intOuter < newList.size(); intOuter++){
+			
+			String[] newJob = newList.get(intOuter);
+			
+			for(int intInner = 0; intInner < oldList.size(); intInner++){
+				
+				if(intInner.)
+			}
+			
+		}
+		
+		return null;
+		
+	}
+
+}

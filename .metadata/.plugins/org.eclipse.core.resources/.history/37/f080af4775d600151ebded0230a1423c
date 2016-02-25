@@ -1,0 +1,30 @@
+package com.gss.model;
+
+public class ProductPackage {
+	
+	private Product product;
+	private int intProductQuantity;
+	
+	public ProductPackage(Product product, int intProductQuantity){
+		
+		this.product = product;
+		this.intProductQuantity = intProductQuantity;
+	}
+
+	public Product getProduct() {
+		return product;
+	}
+
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+
+	public int getIntProductQuantity() {
+		return intProductQuantity;
+	}
+
+	public void setIntProductQuantity(int intProductQuantity) {
+		this.intProductQuantity = intProductQuantity;
+	}
+
+}

@@ -1,0 +1,22 @@
+package com.gss.testers;
+
+import java.util.Date;
+
+import com.gss.model.Employee;
+import com.gss.service.EmployeeService;
+import com.gss.utilities.DateHelper;
+
+public class EmployeeInsert {
+	
+	public static void main(String[] args){
+		
+		EmployeeService service = new EmployeeService();
+		String[] job = {"ADMIN"};
+		Date mydate = DateHelper.parseDate("1997-02-03");
+		Employee emp = new Employee(1, "PARAS", "CZARINA", "KING", mydate, "M", "ROSARIO, PASIG CITY", "09361144842", "A", "jksantos03", "jksantos03", "resource/jeff.jpg", null, null);
+									//(int intEmpID, String strEmpLastName, String strEmpFirstName, String strEmpMiddleName, Date datBirthdate, String strEmpGender, String strAddress, String strEmpContactNo, String strEmpStatus, String strUsername, String strPassword, String empPhoto, byte[] bytActualPhoto, String[] strJobQualification)	
+		if(service.create(emp))
+			System.out.println("success");
+	}
+
+}

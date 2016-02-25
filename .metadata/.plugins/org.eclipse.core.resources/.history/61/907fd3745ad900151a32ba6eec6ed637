@@ -1,0 +1,31 @@
+package com.gss.service;
+
+import java.util.List;
+
+import com.gss.action.dao.DiscountJDBCRepository;
+import com.gss.action.dao.DiscountRepository;
+import com.gss.action.model.Discount;
+
+public class DiscountService {
+
+	public List<Discount> getAllDiscount(){
+		
+		DiscountRepository repo = new DiscountJDBCRepository();
+		
+		return repo.getAllDiscount();
+	}
+	
+	public boolean createDiscount(Discount discount){
+		
+		DiscountRepository repo = new DiscountJDBCRepository();
+		
+		return repo.createDiscount(discount);
+	}
+	
+	public boolean updateDiscount(Discount discount){
+	
+		DiscountRepository repo = new DiscountJDBCRepository();
+		
+		return repo.updateDiscount(discount);
+	}
+}

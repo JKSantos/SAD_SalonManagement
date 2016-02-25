@@ -1,0 +1,13 @@
+package com.gss.model;
+
+public class Job {
+	
+	private String strJobDesc;
+	private int intJobStatus;
+	
+	public Job(String strJobDesc, int intJobStatus){
+		this.strJobDesc = strJobDesc;
+		this.intJobStatus = intJobStatus;
+	}
+
+}

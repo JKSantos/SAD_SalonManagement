@@ -1,0 +1,31 @@
+package com.gss.model;
+
+public class ServicePackage {
+	
+	private Service service;
+	private int intStatus;
+	
+	public ServicePackage(Service service, int intStatus){
+		
+		this.service = service;
+		this.intStatus = intStatus;
+		
+	}
+
+	public Service getService() {
+		return service;
+	}
+
+	public void setService(Service service) {
+		this.service = service;
+	}
+
+	public int getIntStatus() {
+		return intStatus;
+	}
+
+	public void setIntStatus(int intStatus) {
+		this.intStatus = intStatus;
+	}
+
+}

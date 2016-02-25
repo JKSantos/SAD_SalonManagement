@@ -1,0 +1,16 @@
+127.0.0.1 - - [06/Feb/2016:16:18:04 +0800] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [06/Feb/2016:16:18:06 +0800] "GET /SimpleLogInUsingStruts/ HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [06/Feb/2016:16:18:38 +0800] "POST /SimpleLogInUsingStruts/loginAction HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [06/Feb/2016:16:18:45 +0800] "POST /SimpleLogInUsingStruts/loginAction HTTP/1.1" 404 1019
+127.0.0.1 - - [06/Feb/2016:16:21:18 +0800] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [06/Feb/2016:16:21:25 +0800] "GET /SimpleLogInUsingStruts/ HTTP/1.1" 404 997
+0:0:0:0:0:0:0:1 - - [06/Feb/2016:16:22:38 +0800] "GET /SimpleLogInUsingStruts/ HTTP/1.1" 404 997
+0:0:0:0:0:0:0:1 - - [06/Feb/2016:16:22:40 +0800] "GET /SimpleLogInUsingStruts/ HTTP/1.1" 404 997
+127.0.0.1 - - [06/Feb/2016:16:26:20 +0800] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [06/Feb/2016:16:26:21 +0800] "GET /SimpleLogInUsingStruts/ HTTP/1.1" 404 997
+0:0:0:0:0:0:0:1 - - [06/Feb/2016:16:26:23 +0800] "GET /SimpleLogInUsingStruts/ HTTP/1.1" 404 997
+0:0:0:0:0:0:0:1 - - [06/Feb/2016:16:26:25 +0800] "GET /SimpleLogInUsingStruts/ HTTP/1.1" 404 997
+127.0.0.1 - - [06/Feb/2016:16:30:53 +0800] "GET / HTTP/1.1" 404 951
+0:0:0:0:0:0:0:1 - - [06/Feb/2016:16:30:54 +0800] "GET /StrutsHelloWorld/ HTTP/1.1" 404 985
+0:0:0:0:0:0:0:1 - - [06/Feb/2016:16:30:59 +0800] "GET /StrutsHelloWorld/ HTTP/1.1" 404 985
+0:0:0:0:0:0:0:1 - - [06/Feb/2016:16:31:01 +0800] "GET /StrutsHelloWorld/ HTTP/1.1" 404 985

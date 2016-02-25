@@ -1,0 +1,43 @@
+1456060541657	Encapsulate field 'src'
+1456061180300	Rename resource 'welcome.jsp'
+1456077064835	Delete element
+1456077073987	Delete element
+1456116399149	Delete element
+1456117429113	Encapsulate field 'strCategoryID'
+1456117439808	Encapsulate field 'strCategoryName'
+1456117676378	Delete element
+1456120103238	Encapsulate field 'empCategory'
+1456120520292	Delete element
+1456134880291	Encapsulate field 'selectedJob'
+1456134926465	Encapsulate field 'strMonth'
+1456134932120	Encapsulate field 'strDay'
+1456134936456	Encapsulate field 'strYear'
+1456141433393	Rename resource 'action'
+1456141461134	Delete element
+1456141507661	Delete element
+1456141521156	Rename package 'com.gss.action1'
+1456141823767	Delete elements
+1456141874702	Rename resource 'action'
+1456141895673	Rename package 'com.gss.action1'
+1456141916272	Rename resource 'action'
+1456141936981	Delete element
+1456141984884	Rename package 'com.gss.action3'
+1456142001710	Rename package 'com.gss.action1'
+1456142062526	Copy files
+1456142074822	Delete element
+1456149240683	Copy file
+1456149256852	Copy file
+1456151929953	Encapsulate field 'photoFile'
+1456153408214	Encapsulate field 'file'
+1456154119687	Encapsulate field 'file'
+1456154154492	Encapsulate field 'contentType'
+1456154165807	Encapsulate field 'filename'
+1456328395962	Rename type 'DiscountService'
+1456328429248	Rename type 'EmployeeService'
+1456328441116	Rename type 'PackageService'
+1456328450999	Rename type 'ProductService'
+1456328461173	Rename type 'ProductServiceIMpl'
+1456328469309	Rename type 'PromoService'
+1456328477284	Rename type 'ServiceService'
+1456329962442	Copy file
+1456329970103	Delete element

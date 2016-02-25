@@ -1,0 +1,40 @@
+package com.gss.dao;
+
+import java.sql.Connection;
+import java.util.List;
+
+import com.gss.connection.JDBCConnection;
+import com.gss.model.Discount;
+
+public class DiscountJDBCRepository implements DiscountRepository{
+
+	JDBCConnection jdbc = new JDBCConnection();
+	
+	@Override
+	public List<Discount> getAllDiscount() {
+		
+		Connection con = jdbc.getConnection();
+		String strQuery = "CALL createDiscount(?, ? ,?, ?)";
+		
+		try{
+			
+		}
+		catch(Exception e){
+			System.out.println(e.fillInStackTrace());
+			return null;
+		}
+	}
+
+	@Override
+	public boolean createDiscount(Discount discount) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateDiscount(Discount discount) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+}

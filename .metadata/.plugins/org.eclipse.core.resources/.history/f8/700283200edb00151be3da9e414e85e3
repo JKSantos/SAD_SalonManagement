@@ -1,0 +1,17 @@
+package com.gss.service;
+
+import java.util.List;
+
+import com.gss.dao.PromoJDBCRepository;
+import com.gss.dao.PromoRepository;
+import com.gss.model.Promo;
+
+public interface PromoService {
+	
+	public boolean createPromo(Promo promo);
+
+	public boolean updatePromo(Promo promo);
+
+	public List<Promo> getAllPromo();
+
+}

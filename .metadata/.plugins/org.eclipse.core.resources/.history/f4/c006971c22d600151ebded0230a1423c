@@ -1,0 +1,37 @@
+package com.gss.service;
+
+import java.util.List;
+
+import com.gss.dao.EmployeeJDBCRepository;
+import com.gss.dao.EmployeeRepository;
+import com.gss.dao.ServiceJDBCRepository;
+import com.gss.dao.ServiceRepository;
+import com.gss.model.Employee;
+import com.gss.model.Service;
+
+public class ServiceService {
+		
+	public List<Service> getAllService() {
+		
+		ServiceRepository repo = new ServiceJDBCRepository();
+		List<Service> serviceList = repo.getAllService();
+		
+		return serviceList;
+	}
+
+	
+	public boolean createService(Service service) {
+		
+		ServiceRepository repo = new ServiceJDBCRepository();
+		repo.createService(service);
+		
+		return false;
+	}
+	
+	public boolean updateService(Service service){
+		ServiceRepository repo = new ServiceJDBCRepository();
+		
+		return repo.updateService(service);
+	}
+
+}

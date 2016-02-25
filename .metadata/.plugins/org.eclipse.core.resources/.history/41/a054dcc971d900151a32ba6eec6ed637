@@ -1,0 +1,186 @@
+package com.gss.actions;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import com.gss.model.Employee;
+import com.gss.model.Job;
+import com.gss.service.EmployeeService;
+import com.gss.utilities.DateHelper;
+
+public class CreateEmployeeAction {
+	
+	private String strEmpLastName;
+	private String strEmpFirstName;
+	private String strEmpMiddleName;
+	private String strMonth;
+	private String strDay;
+	private String strYear;
+	private Date datEmpBirthdate;
+	private String strEmpGender;
+	private String strEmpAddress;
+	private String strEmpContactNo;
+	private String strEmpStatus;
+	private String strEmpUsername;
+	private String strEmpPassword;
+	private String strEmpPhotoPath;
+	private List<String> selectedJob;
+	
+	public String execute(){
+		
+//		List<Job> jobList = new ArrayList<Job>();
+//		String strBirthDate = null;
+//		
+//		
+//		for(int intCtr = 0; intCtr < selectedJob.size(); intCtr++){
+//			
+//			Job job = new Job(selectedJob.get(intCtr), 1);
+//			jobList.add(job);
+//		}
+//		
+//		strBirthDate = strYear + "-" + strMonth + "-" + strDay; 
+//		this.datEmpBirthdate = DateHelper.parseDate(strBirthDate);
+//		
+//		Employee emp = new Employee(1, strEmpLastName, strEmpFirstName, strEmpMiddleName, datEmpBirthdate, strEmpGender, strEmpAddress, strEmpContactNo, strEmpStatus, strEmpUsername, strEmpPassword, "resource/jeff.jpg", null, jobList);
+//		EmployeeService empService = new EmployeeService();
+//		
+//		if(empService.create(emp) == true)
+//		{	
+//			System.out.print("success");
+//			return "success";
+//		}
+//		else
+//		{	
+//			System.out.print("failed");
+//			return "failed";
+//		}
+		
+		com.gss.testers.EmployeeInsert insertEmployee = new com.gss.testers.EmployeeInsert();
+		insertEmployee.createEmp();
+				return "success";
+//		System.out.println(this.strEmpFirstName + " " + this.strEmpMiddleName + " " + this.strEmpLastName);
+//		System.out.println(this.strEmpContactNo + " " + this.strEmpUsername + " " + this.strEmpPassword + " " + this.strEmpAddress);
+//		System.out.print(this.strMonth + "/" + this.strYear + "/" + this.strDay + "\t" + this.selectedJob.get(0) + "\t" + this.strEmpGender + "\t" + this.strEmpPhotoPath);
+	}
+
+	public String getStrEmpLastName() {
+		return strEmpLastName;
+	}
+
+	public void setStrEmpLastName(String strEmpLastName) {
+		this.strEmpLastName = strEmpLastName;
+	}
+
+	public String getStrEmpFirstName() {
+		return strEmpFirstName;
+	}
+
+	public void setStrEmpFirstName(String strEmpFirstName) {
+		this.strEmpFirstName = strEmpFirstName;
+	}
+
+	public String getStrEmpMiddleName() {
+		return strEmpMiddleName;
+	}
+
+	public void setStrEmpMiddleName(String strEmpMiddleName) {
+		this.strEmpMiddleName = strEmpMiddleName;
+	}
+
+	public Date getDatEmpBirthdate() {
+		return datEmpBirthdate;
+	}
+
+	public void setDatEmpBirthdate(Date datEmpBirthdate) {
+		this.datEmpBirthdate = datEmpBirthdate;
+	}
+
+	public String getStrEmpGender() {
+		return strEmpGender;
+	}
+
+	public void setStrEmpGender(String strEmpGender) {
+		this.strEmpGender = strEmpGender;
+	}
+
+	public String getStrEmpAddress() {
+		return strEmpAddress;
+	}
+
+	public void setStrEmpAddress(String strEmpAddress) {
+		this.strEmpAddress = strEmpAddress;
+	}
+
+	public String getStrEmpContactNo() {
+		return strEmpContactNo;
+	}
+
+	public void setStrEmpContactNo(String strEmpContactNo) {
+		this.strEmpContactNo = strEmpContactNo;
+	}
+
+	public String getStrEmpStatus() {
+		return strEmpStatus;
+	}
+
+	public void setStrEmpStatus(String strEmpStatus) {
+		this.strEmpStatus = strEmpStatus;
+	}
+
+	public String getStrEmpUsername() {
+		return strEmpUsername;
+	}
+
+	public void setStrEmpUsername(String strEmpUsername) {
+		this.strEmpUsername = strEmpUsername;
+	}
+
+	public String getStrEmpPassword() {
+		return strEmpPassword;
+	}
+
+	public void setStrEmpPassword(String strEmpPassword) {
+		this.strEmpPassword = strEmpPassword;
+	}
+
+	public String getStrEmpPhotoPath() {
+		return strEmpPhotoPath;
+	}
+
+	public void setStrEmpPhotoPath(String strEmpPhotoPath) {
+		this.strEmpPhotoPath = strEmpPhotoPath;
+	}
+
+	public List<String> getSelectedJob() {
+		return selectedJob;
+	}
+
+	public void setSelectedJob(List<String> selectedJob) {
+		this.selectedJob = selectedJob;
+	}
+
+	public String getStrMonth() {
+		return strMonth;
+	}
+
+	public void setStrMonth(String strMonth) {
+		this.strMonth = strMonth;
+	}
+
+	public String getStrDay() {
+		return strDay;
+	}
+
+	public void setStrDay(String strDay) {
+		this.strDay = strDay;
+	}
+
+	public String getStrYear() {
+		return strYear;
+	}
+
+	public void setStrYear(String strYear) {
+		this.strYear = strYear;
+	}
+}

@@ -1,0 +1,13 @@
+package com.gss.testers;
+
+import com.gss.model.Product;
+import com.gss.service.ProductService;
+
+public class UpdateProduct {
+	
+	public static void main(String[] args){
+		
+		Product product = new Product(7, "GATSBY 150", "Hair Wax", "To be HANDSOME _\m/", 0, null, 90.00, "resource/jeff.jpg");
+		ProductService service = new ProductService();
+	}
+}

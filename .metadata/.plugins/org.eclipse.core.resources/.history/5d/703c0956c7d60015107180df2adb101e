@@ -1,0 +1,20 @@
+package com.gss.utilities;
+
+import java.util.List;
+
+import com.gss.model.ProductPackage;
+
+public class ProductPackageComparison {
+	
+	public String compare(ProductPackage prodPack, List<ProductPackage> productList){
+		
+		for(int intCtr = 0; intCtr < productList.size(); intCtr++ ){
+			
+			ProductPackage pack = productList.get(intCtr);
+			
+			if(prodPack.get)
+			
+		}
+	}
+
+}

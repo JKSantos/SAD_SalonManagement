@@ -1,0 +1,50 @@
+package com.gss.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.List;
+
+import com.gss.connection.JDBCConnection;
+import com.gss.model.Package;
+
+public class PackageJDBCRepository implements PackageRepository{
+
+	private JDBCConnection jdbc = new JDBCConnection();
+	
+	@Override
+	public boolean createPackage(Package pack) {
+		
+		Connection con = jdbc.getConnection();
+		String strQuery1 = "CALL createPackage(?, ?, ?, ?, ?)"; 
+		String strQuery2 = "CALL createProductPackage(?, ?, ?)";
+		String strQuery3 = "CALL createServicePackage(?, ?)";
+		//name, desc, type, head, packageavail
+		//packageid, productid, quantity
+		//packageid, serviceid
+		try{
+			
+			PreparedStatement pre1 = con.prepareStatement(strQuery1);
+			pre1.setString(1, pack.getStrPackageName());
+			pre1.setString(2, pack.getStrPackageDesc()));
+			pre3.setInt(3, pack.getIntPackageType());
+			
+		}
+		catch(Exception e){
+			System.out.println(e.fillInStackTrace());
+			return false;
+		}
+	}
+
+	@Override
+	public boolean updatePackage(Package pack) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public List<Package> getAllPackage() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

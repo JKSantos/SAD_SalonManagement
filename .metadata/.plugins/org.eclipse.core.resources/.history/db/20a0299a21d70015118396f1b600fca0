@@ -1,0 +1,82 @@
+package com.gss.model;
+
+import java.util.List;
+
+public class Promo {
+	
+	private String strPromoID;
+	private String strPromoName;
+	private String strPromoDescription;
+	private double dblPromoPrice;
+	private List<ServicePackage> serviceList;
+	private List<ProductPackage> productList;
+	private String strPromoStatus;
+	
+	public Promo(String strPromoID, String strPromoName, String strPromoDescription, double dblPromoPrice, List<ServicePackage> serviceList, List<ProductPackage> productList, String strPromoStatus){
+		
+		this.strPromoID = strPromoID;
+		this.strPromoName = strPromoName;
+		this.strPromoDescription = strPromoDescription;
+		this.dblPromoPrice = dblPromoPrice;
+		this.serviceList = serviceList;
+		this.productList = productList;
+		this.strPromoStatus = strPromoStatus;
+	}
+
+	public String getStrPromoID() {
+		return strPromoID;
+	}
+
+	public void setStrPromoID(String strPromoID) {
+		this.strPromoID = strPromoID;
+	}
+
+	public String getStrPromoName() {
+		return strPromoName;
+	}
+
+	public void setStrPromoName(String strPromoName) {
+		this.strPromoName = strPromoName;
+	}
+
+	public String getStrPromoDescription() {
+		return strPromoDescription;
+	}
+
+	public void setStrPromoDescription(String strPromoDescription) {
+		this.strPromoDescription = strPromoDescription;
+	}
+
+	public double getDblPromoPrice() {
+		return dblPromoPrice;
+	}
+
+	public void setDblPromoPrice(double dblPromoPrice) {
+		this.dblPromoPrice = dblPromoPrice;
+	}
+
+	public List<ServicePackage> getServiceList() {
+		return serviceList;
+	}
+
+	public void setServiceList(List<ServicePackage> serviceList) {
+		this.serviceList = serviceList;
+	}
+
+	public List<ProductPackage> getProductList() {
+		return productList;
+	}
+
+	public void setProductList(List<ProductPackage> productList) {
+		this.productList = productList;
+	}
+
+	public String getStrPromoStatus() {
+		return strPromoStatus;
+	}
+
+	public void setStrPromoStatus(String strPromoStatus) {
+		this.strPromoStatus = strPromoStatus;
+	}
+
+}

@@ -1,0 +1,49 @@
+package com.gss.utilities;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.gss.model.Job;
+
+public class JobQualificationHelper {
+	
+	public List<String[]> checkChanges(List<Job> newList, List<Job> oldList){
+		
+		List<String[]> finalList = new ArrayList<String[]>();
+		
+		System.out.println("Added jobs: " + newList.size());
+		System.out.println("Added jobs: " + oldList.size());
+		for(int intOuter = 0; intOuter < newList.size(); intOuter++){
+			
+			Job newJob = newList.get(intOuter);
+			
+			for(int intInner = 0; intInner < oldList.size(); intInner++){
+				if(newJob.getStrJobDesc().equals(oldList.get(intInner).getStrJobDesc()) && newJob.getIntJobStatus() == oldList.get(intInner).getIntJobStatus()){
+				
+					String[] finalJob = {"same", newJob.getStrJobDesc(), String.valueOf(newJob.getIntJobStatus())};
+					finalList.add(finalJob);
+					break;
+					
+				}
+				else if(newJob.getStrJobDesc().equals(oldList.get(intInner).getStrJobDesc()) && newJob.getIntJobStatus() != oldList.get(intInner).getIntJobStatus()){
+						
+					String[] finalJob = {"update", newJob.getStrJobDesc(), String.valueOf(newJob.getIntJobStatus())};
+					finalList.add(finalJob);
+					break;
+						
+				}
+				else if(intInner == (oldList.size() - 1)){
+					String[] finalJob = {"new", newJob.getStrJobDesc(), String.valueOf(newJob.getIntJobStatus())};
+					finalList.add(finalJob);
+				}
+			}
+			
+			
+			
+		}
+		System.out.println(finalList.size());
+		return finalList;
+		
+	}
+
+}

@@ -1,0 +1,63 @@
+package com.gss.model;
+
+import java.io.File;
+
+public class Service {
+	
+	private String strServiceID;
+	private String strServiceName;
+	private String strServiceCategory;
+	private String strServiceDesc;
+	private byte[] productPhoto;
+	private double dblServicePrice;
+	
+	public Service(String strServiceID, String strServiceName, String strServiceCategory, String strServiceDesc, byte[] productPhoto){
+		
+		this.strServiceID = strServiceID;
+		this.strServiceName = strServiceName;
+		this.strServiceCategory = strServiceCategory;
+		this.strServiceDesc = strServiceDesc;
+		this.productPhoto = productPhoto;
+	}
+
+	public String getStrServiceID() {
+		return strServiceID;
+	}
+
+	public void setStrServiceID(String strServiceID) {
+		this.strServiceID = strServiceID;
+	}
+
+	public String getStrServiceName() {
+		return strServiceName;
+	}
+
+	public void setStrServiceName(String strServiceName) {
+		this.strServiceName = strServiceName;
+	}
+
+	public String getStrServiceCategory() {
+		return strServiceCategory;
+	}
+
+	public void setStrServiceCategory(String strServiceCategory) {
+		this.strServiceCategory = strServiceCategory;
+	}
+
+	public String getStrServiceDesc() {
+		return strServiceDesc;
+	}
+
+	public void setStrServiceDesc(String strServiceDesc) {
+		this.strServiceDesc = strServiceDesc;
+	}
+
+	public double getDblServicePrice() {
+		return dblServicePrice;
+	}
+
+	public void setDblServicePrice(double dblServicePrice) {
+		this.dblServicePrice = dblServicePrice;
+	}
+
+}

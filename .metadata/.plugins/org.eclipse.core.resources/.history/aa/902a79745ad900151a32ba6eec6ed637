@@ -1,0 +1,20 @@
+package com.gss.testers;
+
+import com.gss.action.model.Discount;
+import com.gss.action.service.DiscountService;
+
+public class UpdateDiscount {
+	
+	public static void main(String[] args){
+		
+		DiscountService service = new DiscountService();
+		Discount discount = new Discount(1, "Senior", "For senior citizens", 1, 20);
+		
+		if(service.updateDiscount(discount) == true)
+			System.out.println("success");
+		else
+			System.out.println("failed");
+		
+	}
+
+}

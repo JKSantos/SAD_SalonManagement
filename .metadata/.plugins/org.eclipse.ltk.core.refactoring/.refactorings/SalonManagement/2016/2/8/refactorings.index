@@ -1,0 +1,44 @@
+1455429688982	Rename package 'com.trial.action'
+1455430902046	Rename package 'com.sms.action'
+1455438163282	Delete element
+1455462117296	Copy files
+1455462137934	Copy files
+1455463650868	Delete element
+1455465580718	Delete element
+1455467712427	Delete element
+1455469889071	Encapsulate field 'name'
+1455469893362	Encapsulate field 'age'
+1455472473995	Encapsulate field 'grade'
+1455513354909	Delete elements
+1455513382197	Delete element
+1455518996296	Encapsulate field 'strEmpGender'
+1455519035750	Encapsulate field 'bytEmpPhoto'
+1455519254861	Encapsulate field 'strEmpUsername'
+1455521340914	Encapsulate field 'intEmpID'
+1455522317981	Encapsulate field 'blobEmpPhoto'
+1455532179311	Copy file
+1455532191033	Copy file
+1455538028909	Delete element
+1455538040632	Rename compilation unit 'CreateEmployee.java'
+1455554299961	Delete element
+1455714582104	Rename package 'com.gss.databaseconnection'
+1455720681099	Encapsulate field 'bytActualImage'
+1455720754705	Encapsulate field 'strJobQualification'
+1455783657065	Encapsulate field 'productPhoto'
+1455783850425	Encapsulate field 'strServiceStatus'
+1455784126992	Encapsulate field 'strPhotoPath'
+1455815214098	Encapsulate field 'intProductID'
+1455819122754	Delete element
+1455822764491	Encapsulate field 'strPackageAvailability'
+1455822979767	Delete element
+1455823100404	Encapsulate field 'intMaxHeadCount'
+1455823275144	Encapsulate field 'product'
+1455823280008	Encapsulate field 'intProductQuantity'
+1455823369975	Encapsulate field 'intStatus'
+1455829366413	Encapsulate field 'intDiscountID'
+1455860173420	Encapsulate field 'intServicePackageID'
+1455860342100	Encapsulate field 'intProductPackageID'
+1455897595703	Encapsulate field 'strPromoAvailability'
+1455898047551	Encapsulate field 'intMaxHeadCount'
+1455902382544	Rename package 'com.gss.configurations'
+1455905047419	Delete element

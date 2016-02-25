@@ -1,0 +1,5 @@
+package com.gss.service;
+
+public interface EmployeeService {
+
+}

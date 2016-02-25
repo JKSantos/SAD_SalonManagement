@@ -1,0 +1,19 @@
+package com.gss.testers;
+
+import java.util.Date;
+import java.util.List;
+
+import com.gss.model.Employee;
+import com.gss.service.EmployeeService;
+import com.gss.utilities.DateHelper;
+
+public class EmployeeGetAll {
+public static void main(String[] args){
+		
+		EmployeeService service = new EmployeeService();
+		
+		List<Employee> empList= service.getAllEmployees();
+		if(empList != null)
+			System.out.println("success");
+	}
+}

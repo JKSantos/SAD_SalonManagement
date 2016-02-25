@@ -1,0 +1,13 @@
+package com.gss.testers;
+
+import com.gss.service.EmployeeService;
+
+public class LogInEmployee {
+	
+	public static void main(String[] args){
+		
+		EmployeeService service = new EmployeeService();
+		service.getEmployeeByUserPass("jeff", "jeff");
+	}
+
+}

@@ -1,0 +1,27 @@
+package com.gss.dao;
+
+import java.util.List;
+
+import com.gss.model.Discount;
+
+public class DiscountJDBCRepository implements DiscountRepository{
+
+	@Override
+	public List<Discount> getAllDiscount() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean createDiscount(Discount discount) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateDiscount(Discount discount) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+}

@@ -1,0 +1,91 @@
+package com.gss.model;
+
+import java.io.File;
+
+public class Service {
+	
+	private int intServiceID;
+	private String strServiceName;
+	private String strServiceCategory;
+	private String strServiceStatus;
+	private String strServiceDesc;
+	private byte[] productPhoto;
+	private double dblServicePrice;
+	private String strPhotoPath;
+	
+	public Service(int intServiceID, String strServiceName, String strServiceCategory, String strServiceStatus, String strServiceDesc, byte[] productPhoto, String strPhotoPath){
+		
+		this.intServiceID = intServiceID;
+		this.strServiceName = strServiceName;
+		this.strServiceCategory = strServiceCategory;
+		this.strServiceStatus = strServiceStatus;
+		this.strServiceDesc = strServiceDesc;
+		this.setProductPhoto(productPhoto);
+		this.strPhotoPath = strPhotoPath;
+	}
+
+	public int getIntServiceID() {
+		return intServiceID;
+	}
+
+	public void setIntServiceID(int intServiceID) {
+		this.intServiceID = intServiceID;
+	}
+
+	public String getStrServiceName() {
+		return strServiceName;
+	}
+
+	public void setStrServiceName(String strServiceName) {
+		this.strServiceName = strServiceName;
+	}
+
+	public String getStrServiceCategory() {
+		return strServiceCategory;
+	}
+
+	public void setStrServiceCategory(String strServiceCategory) {
+		this.strServiceCategory = strServiceCategory;
+	}
+
+	public String getStrServiceDesc() {
+		return strServiceDesc;
+	}
+
+	public void setStrServiceDesc(String strServiceDesc) {
+		this.strServiceDesc = strServiceDesc;
+	}
+
+	public double getDblServicePrice() {
+		return dblServicePrice;
+	}
+
+	public void setDblServicePrice(double dblServicePrice) {
+		this.dblServicePrice = dblServicePrice;
+	}
+
+	public byte[] getProductPhoto() {
+		return productPhoto;
+	}
+
+	public void setProductPhoto(byte[] productPhoto) {
+		this.productPhoto = productPhoto;
+	}
+
+	public String getStrServiceStatus() {
+		return strServiceStatus;
+	}
+
+	public void setStrServiceStatus(String strServiceStatus) {
+		this.strServiceStatus = strServiceStatus;
+	}
+
+	public String getStrPhotoPath() {
+		return strPhotoPath;
+	}
+
+	public void setStrPhotoPath(String strPhotoPath) {
+		this.strPhotoPath = strPhotoPath;
+	}
+
+}

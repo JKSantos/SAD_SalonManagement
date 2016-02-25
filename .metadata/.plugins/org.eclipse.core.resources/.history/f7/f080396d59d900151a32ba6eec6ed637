@@ -1,0 +1,27 @@
+package com.gss.action.action;
+
+import java.util.List;
+
+import com.gss.action.model.EmployeeCategory;
+import com.gss.action.service.EmployeeService;
+
+public class GetEmployeeCategoryAction {
+	
+	private List<EmployeeCategory> empCategory;
+	
+	public String execute(){
+		
+		EmployeeService empService = new EmployeeService();
+		this.empCategory = empService.getAllCategory();
+		
+		return "success";
+	}
+
+	public List<EmployeeCategory> getEmpCategory() {
+		return empCategory;
+	}
+
+	public void setEmpCategory(List<EmployeeCategory> empCategory) {
+		this.empCategory = empCategory;
+	}
+}

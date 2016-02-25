@@ -1,0 +1,102 @@
+package com.gss.model;
+
+import java.util.List;
+
+public class Package {
+	
+	private int intPackageID;
+	private String strPackageName;
+	private String strPackageDesc;
+	private String strPackageType;
+	private String strPackageAvailability;
+	private double dblPackagePrice;
+	private List<Service> serviceList;
+	private List<Product> productList;
+	private String strPackageStatus;
+	
+	public Package(int intPackageID, String strPackageName, String strPackageDesc, String strPackageType, String strPackageAvailability, double dblPackagePrice, List<Service> serviceList, List<Product> productList, String strPackageStatus){
+		
+		this.intPackageID = intPackageID;
+		this.strPackageName = strPackageName;
+		this.strPackageDesc = strPackageDesc;
+		this.strPackageType = strPackageType;
+		this.setStrPackageAvailability(strPackageAvailability);
+		this.dblPackagePrice = dblPackagePrice;
+		this.serviceList = serviceList;
+		this.productList = productList;
+		this.strPackageStatus = strPackageStatus;
+	}
+
+	public int getIntPackageID() {
+		return intPackageID;
+	}
+
+	public void setIntPackageID(int intPackageID) {
+		this.intPackageID = intPackageID;
+	}
+
+	public String getStrPackageName() {
+		return strPackageName;
+	}
+
+	public void setStrPackageName(String strPackageName) {
+		this.strPackageName = strPackageName;
+	}
+
+	public String getStrPackageDesc() {
+		return strPackageDesc;
+	}
+
+	public void setStrPackageDesc(String strPackageDesc) {
+		this.strPackageDesc = strPackageDesc;
+	}
+
+	public String getStrPackageType() {
+		return strPackageType;
+	}
+
+	public void setStrPackageType(String strPackageType) {
+		this.strPackageType = strPackageType;
+	}
+
+	public double getDblPackagePrice() {
+		return dblPackagePrice;
+	}
+
+	public void setDblPackagePrice(double dblPackagePrice) {
+		this.dblPackagePrice = dblPackagePrice;
+	}
+
+	public List<Service> getServiceList() {
+		return serviceList;
+	}
+
+	public void setServiceList(List<Service> serviceList) {
+		this.serviceList = serviceList;
+	}
+
+	public List<Product> getProductList() {
+		return productList;
+	}
+
+	public void setProductList(List<Product> productList) {
+		this.productList = productList;
+	}
+
+	public String getStrPackageStatus() {
+		return strPackageStatus;
+	}
+
+	public void setStrPackageStatus(String strPackageStatus) {
+		this.strPackageStatus = strPackageStatus;
+	}
+
+	public String getStrPackageAvailability() {
+		return strPackageAvailability;
+	}
+
+	public void setStrPackageAvailability(String strPackageAvailability) {
+		this.strPackageAvailability = strPackageAvailability;
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.gss.model;
+
+public class ServicePackage {
+	
+	private Service service;
+	private 
+	
+	public ServicePackage(){
+		
+	}
+
+}

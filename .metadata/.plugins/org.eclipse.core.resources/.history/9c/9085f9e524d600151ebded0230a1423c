@@ -1,0 +1,20 @@
+package com.gss.testers;
+
+import com.gss.model.Service;
+import com.gss.service.ServiceService;
+
+public class UpdatePrice {
+	
+public static void main(String[] args){
+		
+		ServiceService service = new ServiceService();
+		
+		Service serv = new Service(26, "HASYASDFd", "KALBO", 1, "SAMPLE DESCRIPTION", null, "resource/jeff.jpg");
+		serv.setDblServicePrice(80.00);
+		
+		if(service.updateService(serv) != true)
+			System.out.println("Success");
+		
+	}
+
+}

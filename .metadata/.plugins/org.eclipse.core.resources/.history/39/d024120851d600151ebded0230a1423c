@@ -1,0 +1,20 @@
+package com.gss.testers;
+
+import java.util.List;
+
+import com.gss.model.Service;
+import com.gss.service.ServiceService;
+
+public class GetAllService {
+
+	public static void main(String[] args){
+		
+		ServiceService service = new ServiceService();
+		
+		List<Service> serviceList = service.getAllService();
+		
+		if(serviceList != null){
+			System.out.println("success");
+		}
+	}
+}

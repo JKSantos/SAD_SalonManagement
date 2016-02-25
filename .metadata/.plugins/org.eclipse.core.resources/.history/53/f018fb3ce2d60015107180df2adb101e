@@ -1,0 +1,31 @@
+package com.gss.utilities;
+
+import java.util.List;
+
+import com.gss.model.ServicePackage;
+
+public class ServicePackageComparison {
+	
+	public String compare(ServicePackage servPack, List<ServicePackage> serviceList){
+		
+		for(int intCtr = 0; intCtr < serviceList.size(); intCtr++){
+			
+			ServicePackage pack = serviceList.get(intCtr);
+			
+			if(servPack.getIntServicePackageID() == pack.getIntServicePackageID() && servPack.getService().getIntServiceID() == pack.getService().getIntServiceID() && servPack.getIntStatus() == pack.getIntStatus()){
+				return "same";
+			}
+			else if(servPack.getIntServicePackageID() == pack.getIntServicePackageID() && servPack.getService().getIntServiceID() != pack.getService().getIntServiceID() || servPack.getIntServicePackageID() == pack.getIntServicePackageID() && servPack.getIntStatus() != pack.getIntStatus()){
+				return "update";
+			}
+			else if(intCtr == (serviceList.size() - 1)){
+				return "new";
+			}
+			
+		}
+		
+		return null;
+		
+	}
+
+}

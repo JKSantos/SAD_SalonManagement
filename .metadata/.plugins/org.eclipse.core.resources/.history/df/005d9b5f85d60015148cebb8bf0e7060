@@ -1,0 +1,20 @@
+package com.gss.testers;
+
+import com.gss.model.Discount;
+import com.gss.service.DiscountService;
+
+public class CreateDiscount {
+	
+	public static void main(String[] args){
+		
+		DiscountService service = new DiscountService();
+		
+		Discount dicount = new Discount(1, "Senior", "Exclusive for senior citizens with valid senior id", 1, 20);
+		
+		if(service.createDiscount(discount) == true)
+			System.out.println("success");
+		else
+			System.ount.println("failed");
+	}
+
+}

@@ -1,0 +1,52 @@
+package com.gss.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.List;
+
+import com.gss.connection.JDBCConnection;
+import com.gss.model.Discount;
+
+public class DiscountJDBCRepository implements DiscountRepository{
+
+	JDBCConnection jdbc = new JDBCConnection();
+	
+	@Override
+	public List<Discount> getAllDiscount() {
+		
+		return null;
+	}
+
+	@Override
+	public boolean createDiscount(Discount discount) {
+		
+		Connection con = jdbc.getConnection();
+		String strQuery = "CALL createDiscount(?, ? ,?, ?)";
+		
+		try{
+			PreparedStatement pre = con.prepareStatement(strQuery);
+			pre.setString(1, discount.getStrDiscountName());
+			pre.setString(2, discount.getStrDiscountDesc());
+			pre.setInt(3, discount.getIntDiscountType());
+			pre.setDouble(4, discount.getDblDiscountAmount());
+			
+			pre.execute();
+			pre.close();
+			con.close();
+			
+			return true;
+			
+		}
+		catch(Exception e){
+			System.out.println(e.fillInStackTrace());
+			return false;
+		}
+	}
+
+	@Override
+	public boolean updateDiscount(Discount discount) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+}
