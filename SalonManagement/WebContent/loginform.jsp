@@ -27,7 +27,7 @@
     <div class="wrapper">
             <aside class="aside aside-1 z-depth-barts">
                 <div class="row">
-                        <form class="col s12" method="post" action="login">
+                        <form class="col s12" method="post" action="employeeMaintenance">
                             <div class="row">
                                 <div class="center">
                                   <h3>Login</h3>
