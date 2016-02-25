@@ -6,6 +6,9 @@
   <link type="text/css" rel="stylesheet" href="./css/mystyle.css"/>
   <link type="text/css" rel="stylesheet" href="./css/admin.css"/>
 
+<%@ taglib uri="/struts-tags" prefix="s" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
@@ -24,7 +27,7 @@
                                 <a class="collapsible-header"><b>Maintenance</b></a>
                                   <div class="collapsible-body">
                                     <ul>
-                                      <li><a href="maintenance-emp.jsp">Employee</a></li>
+                                      <li><a href="employeeMaintenance.action">Employee</a></li>
                                       <li><a href="maintenance-prodsvc.jsp">Product & Service</a></li>
                                       <li><a href="maintenance-promdisc.jsp">Promo</a></li>
                                       <li><a href="maintenance-package.jsp">Discount</a></li>
@@ -174,10 +177,9 @@
                                   <div class="input-field col s12">
                                       <select multiple>
                                         <option value="" disabled selected>Choose Position:</option>
-                                        <option value="1">Hair Stylist</option>
-                                        <option value="2">Nail Stylist</option>
-                                        <option value="3">Therapist</option>
-                                        <option value="3">Manager</option>
+                                        <c:forEach items="${empCategory}" var="name">
+                                          	<option value="${name.strCategoryName}">${name.strCategoryName }</option>
+                                          </c:forEach>
                                       </select>
                                       <label>Position:</label>
                                     </div>
