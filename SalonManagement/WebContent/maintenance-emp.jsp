@@ -9,6 +9,9 @@
   <link type="text/css" rel="stylesheet" href="./css/mtnc-emp.css"/>
   <link rel="stylesheet" type="text/css" href="./css/datepicker.min.css">
   <link rel="stylesheet" type="text/css" href="./css/datepicker.css">
+  <link rel="stylesheet" type="text/css" href="./css/table.css">
+  <link rel="stylesheet" type="text/css" href="./css/table.min.css">
+
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
@@ -24,7 +27,7 @@
                  <!--  <li class="no-padding"> -->
                     <ul class="collapsible" data-collapsible="accordion">
                       <li>
-                        <a class="collapsible-header"><b>Maintenance</b></a>
+                        <a class="collapsible-header active"><b>Maintenance</b></a>
                           <div class="collapsible-body">
                             <ul>
                               <li class="orange"><a href="employeeMaintenance.action">Employee</a></li>
@@ -229,10 +232,10 @@
 
                     <div class="aside aside2 z-depth-barts">
                                     <nav class="z-depth-0">
-                                      <div class="nav-wrapper grey lighten-3 grey-text text-darken-4">
+                                      <div class="nav-wrapper orange lighten-3 grey-text text-darken-4">
                                         <form>
                                           <div class="input-field col s12 z-depth-0">
-                                            <input class="grey lighten-1" id="search" type="search" ng-model="name">
+                                            <input class="orange lighten-3" id="search" type="search" ng-model="name">
                                             <label for="search"><i class="material-icons grey-text text-darken-3">search</i></label>
                                           </div>
                                         </form>
@@ -242,45 +245,48 @@
                          <div class="col s12">
                              <div class="row">
                                     <h5>Employee List</h5>
-                                        <!-- <li ng-repeat="employee in emp | filter: name | orderBy: 'lastname'">
-                                          <div class="collapsible-header">
-                                              {{employee.name}} {{employee.lastname}}
-                                          </div>
-                                          <div class="collapsible-body blue-grey lighten-5"><a href="#modaledit" class="modal-trigger waves-effect waves-orange btn-flat">Update</a>
-                                          <a  class="waves-effect waves-orange btn-flat red-text">Deactivate</a></div>
-                                        </li> -->
-                                        <!-- <li>
-                                          <div class="collapsible-header">
-                                              <img src="./img/barts.jpg" style="width: 30px;height: 30px; margin-top: 6px;" class="circle left"/>
-                                              John Angelo C. Barot
-                                          </div>
-                                          <div class="collapsible-body blue-grey lighten-5">
-                                          <a class="waves-effect waves-orange btn-flat">Edit</a>
-                                          <a class="waves-effect waves-orange btn-flat red-text">Delete</a></div>
-                                        </li>
-                                        <li>
-                                          <div class="collapsible-header">
-                                              <img src="./img/joshua.jpg" style="width: 30px;height: 30px; margin-top: 6px;" class="circle left"/>
-                                              Joshua N. Mercado
-                                          </div> -->
                                       </ul>
-                                      <table class="striped highlight">
-                                              <thead>
-                                                <tr>
-                                                    <th data-field="id">Name</th>
-                                                    <th data-field="name">Position</th>
-                                                    <th data-field="price" class="center">Action</th>
-                                                </tr>
-                                              </thead>
 
-                                              <tbody ng-init="emp=[{name:'Han Ainan',lastname:'Ongsip'},{name:'John Angelo',lastname:'Barot'},{name:'Joshua',lastname:'Mercado'}]">
-                                                <tr ng-repeat="employee in emp | filter: name | orderBy: 'name'">
-                                                  <td>{{employee.name}} {{employee.lastname}}</td>
-                                                  <td>Cashier</td>
-                                                  <td class="center"><button class="waves-effect waves-light btn-flat" title="Update"><i class="material-icons small">edit</i></button><button class="waves-effect waves-light btn-flat"><i class="material-icons">delete</i></button></td>
-                                                </tr>
-                                              </tbody>
+
+                                      <table class="ui sortable celled table">
+                                        <thead>
+                                          <tr>
+                                            <th data-sort="string" class="orange lighten-5">Name</th>
+                                            <th data-sort="string" class="orange lighten-5">Position</th>
+                                            <th class="no-sort orange lighten-5">Actions</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>John Angelo Castillo</td>
+                                            <td>Cashier</td>
+                                            <td><button style="padding: 0px;" class="waves-effect waves-orange transparent btn-flat"><i class="material-icons">edit</i></button><button style="padding: 0px; margin-left:15px;" class="waves-effect waves-orange transparent btn-flat"><i class="material-icons">delete</i></button></td>
+                                          </tr>
+                                        </tr>
+                                        <tr>
+                                            <td>John Angelo Castillo</td>
+                                            <td>Cashier</td>
+                                            <td><button style="padding: 0px;" class="waves-effect waves-orange transparent btn-flat"><i class="material-icons">edit</i></button><button style="padding: 0px; margin-left:15px;" class="waves-effect waves-orange transparent btn-flat"><i class="material-icons">delete</i></button></td>
+                                          </tr>
+                                        </tr>
+                                        <tr>
+                                            <td>John Angelo Castillo</td>
+                                            <td>Cashier</td>
+                                            <td><button style="padding: 0px;" class="waves-effect waves-orange transparent btn-flat"><i class="material-icons">edit</i></button><button style="padding: 0px; margin-left:15px;" class="waves-effect waves-orange transparent btn-flat"><i class="material-icons">delete</i></button></td>
+                                          </tr>
+                                        </tr>
                                       </table>
+                                      <ul class="pagination right">
+                                            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                                            <li class="active orange"><a href="#!">1</a></li>
+                                            <li class="waves-effect"><a href="#!">2</a></li>
+                                            <li class="waves-effect"><a href="#!">3</a></li>
+                                            <li class="waves-effect"><a href="#!">4</a></li>
+                                            <li class="waves-effect"><a href="#!">5</a></li>
+                                            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+                                          </ul>
+
+                                     
 
                                       <div id="modaledit" class="modal modal-fixed-footer">
                                           <div class="modal-content">
@@ -335,13 +341,15 @@
 
   <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-latest.min.js"></script>
     <script type="text/javascript" src="./js/materialize.min.js"></script>
     <script type="text/javascript" src="./js/angular.min.js"></script>
-    <script type="text/javascript" src="./js/datepicker.min.js"></script>
-    <script type="text/javascript" src="./js/datepicker.js"></script>
+    <script type="text/javascript" src="./js/package.js"></script>
+    <script type="text/javascript" src="./js/stupidtable.js"></script>
+    <script type="text/javascript" src="./js/stupidtable.min.js"></script>
 
     <script type="text/javascript">
-         
+        $("table").stupidtable();
     </script>
 
     <script type="text/javascript">
