@@ -264,9 +264,10 @@
                                         
                                         	 <c:forEach items="${empList}" var="employee">
                                         	 <tr>
+                                        	 	<td>${employee.intEmpID}</td>
                                           		<td>${employee.strEmpFirstName} ${employee.strEmpLastName}</td>
                                             	<td>Cashier</td>
-                                            	<td><button style="padding: 0px;" class="waves-effect waves-orange transparent btn-flat"><i class="material-icons">edit</i></button><button style="padding: 0px; margin-left:15px;" class="waves-effect waves-orange transparent btn-flat"><i class="material-icons">delete</i></button></td>
+                                            	<td><a href="#update" style="padding: 0px;" class="waves-effect waves-orange modal-trigger transparent btn-flat"><i class="material-icons">edit</i></a><button style="padding: 0px; margin-left:15px;" class="waves-effect waves-orange transparent btn-flat"><i class="material-icons">delete</i></button></td>
                                           		</tr>
                                           	</c:forEach> 
                                           
@@ -321,28 +322,28 @@
                                                   <label for="lname">Last Name</label>
                                               </div>
                                               <div class="input-field col s3">
-                                                  <select id="month">
-                                                    <option value="jan">January</option>
-                                                    <option value="feb">February</option>
-                                                    <option value="mar">March</option>
-                                                    <option value="apr">April</option>
-                                                    <option value="may">May</option>
-                                                    <option value="jun">June</option>
-                                                    <option value="jul">July</option>
-                                                    <option value="aug">August</option>
-                                                    <option value="sep">September</option>
-                                                    <option value="oct">October</option>
-                                                    <option value="nov">November</option>
-                                                    <option value="dec">December</option>
+                                                  <select name="strMonth" id="month">
+                                                    <option value="1">January</option>
+                                                    <option value="2">February</option>
+                                                    <option value="3">March</option>
+                                                    <option value="4">April</option>
+                                                    <option value="5">May</option>
+                                                    <option value="6">June</option>
+                                                    <option value="7">July</option>
+                                                    <option value="8">August</option>
+                                                    <option value="9">September</option>
+                                                    <option value="10">October</option>
+                                                    <option value="11">November</option>
+                                                    <option value="12">December</option>
                                                   </select>
                                                   <label for="month">Month</label>
                                               </div>
                                               <div class="input-field col s1">
-                                                  <input type="text" name="day" id="day" class="validate" maxlength="2">
+                                                  <input type="text" name="strDay" id="day" class="validate" maxlength="2">
                                                   <label for="day">Day</label>
                                               </div>
                                               <div class="input-field col s3">
-                                                  <input type="text" name="year" maxlength="4" class="validate" id="year">
+                                                  <input type="text" name="strYear" maxlength="4" class="validate" id="year">
                                                   <label for="year">Year</label>
                                               </div>
                                               <div class="input-field col s2 offset-s2">
@@ -350,7 +351,7 @@
                                                   <label for="age">Age</label>
                                               </div>
                                               <div class="input-field col s6" >
-                                                  <select>
+                                                  <select name="strEmpGender" required>
                                                     <option value="" disabled selected>Choose...</option>
                                                     <option value="1">Male</option>
                                                     <option value="2">Female</option>
@@ -365,7 +366,7 @@
                                                   <label for="number">Contact Number</label>
                                               </div>
                                               <div class="input-field col s12">
-                                                  <input name="adres" type="text" id="adres" class="validate">
+                                                  <input name="strEmpAddress" type="text" id="adres" class="validate">
                                                   <label for="adres">Address</label>
                                               </div>
                                               <div class="input-field col s12">
@@ -392,11 +393,11 @@
                                               </div>
                                               <div class="input-field col s6 offset-s3">
                                                   <input name="strEmpUsername" type="text" class="validate" id="un" maxlength="15" disabled="disabled">
-                                                  <label for="un">Username</label>
+                                                  <label for="strEmpUsername">Username</label>
                                               </div>
                                               <div class="input-field col s6 offset-s3">
                                                   <input name="strEmpPassword" type="password" class="validate" id="pw" maxlength="20" disabled="disabled">
-                                                  <label for="pw">Password <span id="pw1"></span></label>
+                                                  <label for="strEmpPassword">Password <span id="pw1"></span></label>
                                               </div>
                                               <div class="input-field col s6 offset-s3">
                                                   <input type="password" class="validate" id="conf-pw" maxlength="20" disabled="disabled">
