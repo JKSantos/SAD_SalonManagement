@@ -15,17 +15,11 @@ public class EmployeeMaintenanceAction {
 		
 		EmployeeServiceImpl empService = new EmployeeServiceImpl();
 		this.empCategory = empService.getAllCategory();
-		this.setEmpList(empService.getAllEmployees());
+		this.empList = empService.getAllEmployees();
+		
+		System.out.println(empList.get(1).getStrEmpFirstName());
 		
 		return "success";
-	}
-
-	public List<EmployeeCategory> getEmpCategory() {
-		return empCategory;
-	}
-
-	public void setEmpCategory(List<EmployeeCategory> empCategory) {
-		this.empCategory = empCategory;
 	}
 
 	public List<Employee> getEmpList() {
@@ -34,5 +28,13 @@ public class EmployeeMaintenanceAction {
 
 	public void setEmpList(List<Employee> empList) {
 		this.empList = empList;
+	}
+
+	public List<EmployeeCategory> getEmpCategory() {
+		return empCategory;
+	}
+
+	public void setEmpCategory(List<EmployeeCategory> empCategory) {
+		this.empCategory = empCategory;
 	}
 }

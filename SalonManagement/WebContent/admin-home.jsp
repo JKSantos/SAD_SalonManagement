@@ -27,7 +27,7 @@
                                 <a class="collapsible-header"><b>Maintenance</b></a>
                                   <div class="collapsible-body">
                                     <ul>
-                                      <li><a href="employeeMaintenance">Employee</a></li>
+                                      <li><a href="employeeMaintenance.action">Employee</a></li>
                                       <li><a href="maintenance-prodsvc.jsp">Product & Service</a></li>
                                       <li><a href="maintenance-promdisc.jsp">Promo</a></li>
                                       <li><a href="maintenance-package.jsp">Discount</a></li>

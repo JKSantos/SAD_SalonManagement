@@ -131,36 +131,7 @@
                                       <label for="lname">Last Name<span class="red-text">*</span></label>
                                   </div>
                                       <div class="input-field col s3">
-<<<<<<< HEAD
-                                          <select id="month">
-                                            <option value="jan">January</option>
-                                            <option value="feb">February</option>
-                                            <option value="mar">March</option>
-                                            <option value="apr">April</option>
-                                            <option value="may">May</option>
-                                            <option value="jun">June</option>
-                                            <option value="jul">July</option>
-                                            <option value="aug">August</option>
-                                            <option value="sep">September</option>
-                                            <option value="oct">October</option>
-                                            <option value="nov">November</option>
-                                            <option value="dec">December</option>
-                                          </select>
-                                          <label for="month">Month <span class="red-text">*</span></label>
-                                      </div>
-                                      <div class="input-field col s1">
-                                          <input type="text" name="day" id="day" class="validate" maxlength="2">
-                                          <label for="day">Day <span class="red-text">*</span></label>
-                                      </div>
-                                      <div class="input-field col s3">
-                                          <input type="text" name="year" maxlength="4" class="validate" id="year">
-                                          <label for="year">Year <span class="red-text">*</span></label>
-                                      </div>
-                                      <div class="input-field col s2 offset-s2">
-                                          <input type="text" name="age" maxlength="3" class="validate" id="age" disabled="disabled">
-                                          <label for="age">Age</label>
-=======
-                                          <select id="month" name="strMonth">
+                                          <select id="strMonth" name="strMonth">
                                               <option value="1">January</option>
                                               <option value="2">February</option>
                                               <option value="3">March</option>
@@ -187,8 +158,6 @@
                                       <div class="input-field col s4">
                                           <input type="text" class="validate" disabled value="">
                                           <label style="color: #9e9e9e;">Age: <span id="age"></span></label>
-                                          
->>>>>>> dd7fd178ed30f5572fead6b230ef661f5975a86a
                                       </div>
                                   <div class="input-field col s6" >
                                       <select name="strEmpGender" required>

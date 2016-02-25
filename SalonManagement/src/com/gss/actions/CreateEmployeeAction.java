@@ -28,7 +28,6 @@ public class CreateEmployeeAction extends ActionSupport{
 	private String strEmpUsername;
 	private String strEmpPassword;
 	private String strEmpBirthdate;
-	private String strPath;
 	private File file;
 	private String contentType;
 	private String filename;
@@ -49,8 +48,8 @@ public class CreateEmployeeAction extends ActionSupport{
 			jobList.add(job);
 		}
 		
-		strBirthDate = strYear + "-" + strMonth + "-" + strDay; 
-		this.datEmpBirthdate = DateHelper.parseDate(strBirthDate);
+		//strBirthDate = strYear + "-" + strMonth + "-" + strDay; 
+		this.datEmpBirthdate = DateHelper.parseDate(strEmpBirthdate);
 		
 		Employee emp = new Employee(1, strEmpLastName, strEmpFirstName, strEmpMiddleName, datEmpBirthdate, strEmpGender, strEmpAddress, strEmpContactNo, "A", strEmpUsername, strEmpPassword, path, null, jobList);
 		EmployeeServiceImpl empService = new EmployeeServiceImpl();
@@ -209,13 +208,5 @@ public class CreateEmployeeAction extends ActionSupport{
 
 	public void setStrEmpBirthdate(String strEmpBirthdate) {
 		this.strEmpBirthdate = strEmpBirthdate;
-	}
-
-	public String getStrPath() {
-		return strPath;
-	}
-
-	public void setStrPath(String strPath) {
-		this.strPath = strPath;
 	}
 }
