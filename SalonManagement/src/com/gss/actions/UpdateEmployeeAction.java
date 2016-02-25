@@ -27,6 +27,7 @@ public class UpdateEmployeeAction extends ActionSupport{
 	private String strEmpStatus;
 	private String strEmpUsername;
 	private String strEmpPassword;
+	private String strFileName;
 	private File file;
 	private String contentType;
 	private String filename;
@@ -36,9 +37,10 @@ public class UpdateEmployeeAction extends ActionSupport{
 		
 		List<Job> jobList = new ArrayList<Job>();
 		String strBirthDate = null;
-		String path = file.getAbsolutePath();
+		String path = null;
 		
-		System.out.println(path + " " + this.filename );
+		EmployeeServiceImpl empService = new EmployeeServiceImpl();
+		Employee emp = null;
 		
 		for(int intCtr = 0; intCtr < selectedJob.size(); intCtr++){
 			
@@ -49,8 +51,13 @@ public class UpdateEmployeeAction extends ActionSupport{
 		strBirthDate = strYear + "-" + strMonth + "-" + strDay; 
 		this.datEmpBirthdate = DateHelper.parseDate(strBirthDate);
 		
-		Employee emp = new Employee(1, strEmpLastName, strEmpFirstName, strEmpMiddleName, datEmpBirthdate, strEmpGender, strEmpAddress, strEmpContactNo, "A", strEmpUsername, strEmpPassword, path, null, jobList);
-		EmployeeServiceImpl empService = new EmployeeServiceImpl();
+		if(strFileName.equals("Image")){
+			emp = new Employee(1, strEmpLastName, strEmpFirstName, strEmpMiddleName, datEmpBirthdate, strEmpGender, strEmpAddress, strEmpContactNo, "A", strEmpUsername, strEmpPassword, "Image", null, jobList);
+		}
+		else{
+			path = file.getAbsolutePath();
+			emp = new Employee(1, strEmpLastName, strEmpFirstName, strEmpMiddleName, datEmpBirthdate, strEmpGender, strEmpAddress, strEmpContactNo, "A", strEmpUsername, strEmpPassword, path, null, jobList);
+		}
 		
 		if(empService.updateEmployee(emp) == true)
 		{	
