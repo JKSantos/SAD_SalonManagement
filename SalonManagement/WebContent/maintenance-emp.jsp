@@ -5,6 +5,8 @@
   <link type="text/css" rel="stylesheet" href="./css/materialize.css"/>
   <link type="text/css" rel="stylesheet" href="./css/mystyle.css"/>
   <link type="text/css" rel="stylesheet" href="./css/mtnc-emp.css"/>
+  <link rel="stylesheet" type="text/css" href="./css/datepicker.min.css">
+  <link rel="stylesheet" type="text/css" href="./css/datepicker.css">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
@@ -122,13 +124,13 @@
                                       <input id="lname" type="text" class="validate" required>
                                       <label for="lname">Last Name<span class="red-text">*</span></label>
                                   </div>
-                                      <div class="input-field col s8">
-                                        <input type="date" class="datepicker">
+                                      <div class="input-field col s6">
+                                        <input type="text" class="form-control docs-date" id="dob" name="date" onchange="calAge();" placeholder="Pick a date">
+                                        <label for="bday">Birthday <span class="red-text">*</span></label>
                                       </div>
-                                      <div class="input-field col s4">
-                                          <input type="text" class="validate" disabled value="">
-                                          <label style="color: #9e9e9e;">Age: <span id="age"></span></label>
-                                          
+                                      <div class="input-field col s4 offset-s2">
+                                          <input type="text" class="validate" disabled value="" id="age">
+                                          <label style="color: #9e9e9e;">Age: </label>
                                       </div>
                                   <div class="input-field col s6" >
                                       <select required>
@@ -138,10 +140,10 @@
                                       </select>
                                       <label>Gender <span class="red-text">*</span></label>
                                   </div>
-                                  <div class="input-field col s1">
+                                  <div class="input-field col s1 offset-s1">
                                     <p style="margin-top: 12px; margin-left: -7px;">(+63)</p>
                                   </div>
-                                  <div class="input-field col s5">
+                                  <div class="input-field col s4">
                                       <input type="text" id="contact" class="validate" maxlength="10">
                                       <label for="contact">Contact Number</label>
                                   </div>
@@ -235,20 +237,20 @@
                                               Joshua N. Mercado
                                           </div> -->
                                       </ul>
-                                      <table class="stripped">
+                                      <table class="striped highlight">
                                               <thead>
                                                 <tr>
                                                     <th data-field="id">Name</th>
                                                     <th data-field="name">Position</th>
-                                                    <th data-field="price">Action</th>
+                                                    <th data-field="price" class="center">Action</th>
                                                 </tr>
                                               </thead>
 
                                               <tbody ng-init="emp=[{name:'Han Ainan',lastname:'Ongsip'},{name:'John Angelo',lastname:'Barot'},{name:'Joshua',lastname:'Mercado'}]">
                                                 <tr ng-repeat="employee in emp | filter: name | orderBy: 'name'">
                                                   <td>{{employee.name}} {{employee.lastname}}</td>
-                                                  <td></td>
-                                                  <td>$0.87</td>
+                                                  <td>Cashier</td>
+                                                  <td class="center"><button class="waves-effect waves-light btn-flat" title="Update"><i class="material-icons small">edit</i></button><button class="waves-effect waves-light btn-flat"><i class="material-icons">delete</i></button></td>
                                                 </tr>
                                               </tbody>
                                       </table>
@@ -308,7 +310,117 @@
     <script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="./js/materialize.min.js"></script>
     <script type="text/javascript" src="./js/angular.min.js"></script>
-    
+    <script type="text/javascript" src="./js/datepicker.min.js"></script>
+    <script type="text/javascript" src="./js/datepicker.js"></script>
+
+    <script type="text/javascript">
+         
+    </script>
+
+    <script type="text/javascript">
+      $(function () {
+
+        'use strict';
+
+        var $date = $('.docs-date');
+        var $container = $('.docs-datepicker-container');
+        var $trigger = $('.docs-datepicker-trigger');
+        var options = {
+              show: function (e) {
+                console.log(e.type, e.namespace);
+              },
+              hide: function (e) {
+                console.log(e.type, e.namespace);
+              },
+              pick: function (e) {
+                console.log(e.type, e.namespace, e.view);
+              }
+            };
+
+        $date.on({
+          'show.datepicker': function (e) {
+            console.log(e.type, e.namespace);
+          },
+          'hide.datepicker': function (e) {
+            console.log(e.type, e.namespace);
+          },
+          'pick.datepicker': function (e) {
+            console.log(e.type, e.namespace, e.view);
+          }
+        }).datepicker(options);
+
+        $('.docs-options, .docs-toggles').on('change', function (e) {
+          var target = e.target;
+          var $target = $(target);
+          var name = $target.attr('name');
+          var value = target.type === 'checkbox' ? target.checked : $target.val();
+          var $optionContainer;
+
+          switch (name) {
+            case 'container':
+              if (value) {
+                value = $container;
+                $container.show();
+              } else {
+                $container.hide();
+              }
+
+              break;
+
+            case 'trigger':
+              if (value) {
+                value = $trigger;
+                $trigger.prop('disabled', false);
+              } else {
+                $trigger.prop('disabled', true);
+              }
+
+              break;
+
+            case 'inline':
+              $optionContainer = $('input[name="container"]');
+
+              if (!$optionContainer.prop('checked')) {
+                $optionContainer.click();
+              }
+
+              break;
+
+            case 'language':
+              $('input[name="format"]').val($.fn.datepicker.languages[value].format);
+              break;
+          }
+
+          options[name] = value;
+          $date.datepicker('reset').datepicker('destroy').datepicker(options);
+        });
+
+        $('.docs-actions').on('click', 'button', function (e) {
+          var data = $(this).data();
+          var args = data.arguments || [];
+          var result;
+
+          e.stopPropagation();
+
+          if (data.method) {
+            if (data.source) {
+              $date.datepicker(data.method, $(data.source).val());
+            } else {
+              result = $date.datepicker(data.method, args[0], args[1], args[2]);
+
+              if (result && data.target) {
+                $(data.target).val(result);
+              }
+            }
+          }
+        });
+
+        $('[data-toggle="datepicker"]').datepicker();
+
+      });
+
+    </script>
+
     <script type="text/javascript">
       $( document ).ready(function(){
         $(".button-collapse").sideNav();
@@ -317,12 +429,6 @@
       });
     </script>
     <!-- bday -->
-    <script type="text/javascript">
-        $('.datepicker').pickadate({
-          selectMonths: true, // Creates a dropdown to control month
-          selectYears: 15 // Creates a dropdown of 15 years to control year
-        });
-    </script>
 
     <!-- Upload image -->
 
@@ -408,43 +514,43 @@
       }
    </script>
 
-   <script type="text/javascript">
-   var month = document.getElementById('month').value;
-   var day = document.getElementById('day').value;
-   var year = document.getElementById('year').value;
+   // <script type="text/javascript">
+   // var month = document.getElementById('month').value;
+   // var day = document.getElementById('day').value;
+   // var year = document.getElementById('year').value;
 
-   var curday = new Date();
-   var mm = curday.getMonth()+1;
-   var dd = curday.getDate();
-   var yyyy = curday.getFullYear();
+   // var curday = new Date();
+   // var mm = curday.getMonth()+1;
+   // var dd = curday.getDate();
+   // var yyyy = curday.getFullYear();
 
-   var bday = month+'/'+day+'/'+year;
-   var today = mm+'/'+dd+'/'+yyyy;
+   // var bday = month+'/'+day+'/'+year;
+   // var today = mm+'/'+dd+'/'+yyyy;
    
-   if(day<32 && month!='' || day!='' || year!=''){
-         if(month<=mm && day<=dd && year<=yyyy && day!='' && year>0){
-               var myage = yyyy - year;
-               document.getElementById('age').innerHTML = myage;
-               document.getElementById('age').style.color = "black";
-         } else if(month>=mm && day>dd && year<yyyy && year>0){
-           var myage = yyyy-year;
-           document.getElementById('age').innerHTML = myage-1;
-           document.getElementById('age').style.color = "black";
-         } else if(month>=mm && day<dd && year<yyyy && year>0){
-           var myage = yyyy-year;
-           document.getElementById('age').innerHTML = myage-1;
-           document.getElementById('age').style.color = "black";
-         }else if(year=='' || day=='' || month==''){
-           document.getElementById('age').innerHTML = " ";
-         }else if(year>yyyy){
-           document.getElementById('age').innerHTML = "dpa buhay";
-           document.getElementById('age').style.color = "red";
-         }
-     }
-    else{
-         document.getElementById('age').innerHTML = "";
-    }
-   </script>
+   // if(day<32 && month!='' || day!='' || year!=''){
+   //       if(month<=mm && day<=dd && year<=yyyy && day!='' && year>0){
+   //             var myage = yyyy - year;
+   //             document.getElementById('age').innerHTML = myage;
+   //             document.getElementById('age').style.color = "black";
+   //       } else if(month>=mm && day>dd && year<yyyy && year>0){
+   //         var myage = yyyy-year;
+   //         document.getElementById('age').innerHTML = myage-1;
+   //         document.getElementById('age').style.color = "black";
+   //       } else if(month>=mm && day<dd && year<yyyy && year>0){
+   //         var myage = yyyy-year;
+   //         document.getElementById('age').innerHTML = myage-1;
+   //         document.getElementById('age').style.color = "black";
+   //       }else if(year=='' || day=='' || month==''){
+   //         document.getElementById('age').innerHTML = " ";
+   //       }else if(year>yyyy){
+   //         document.getElementById('age').innerHTML = "dpa buhay";
+   //         document.getElementById('age').style.color = "red";
+   //       }
+   //   }
+   //  else{
+   //       document.getElementById('age').innerHTML = "";
+   //  }
+   // </script>
 
    <script type="text/javascript">
          function checkPass(){
