@@ -214,7 +214,7 @@
                                       <div class="nav-wrapper orange lighten-3 grey-text text-darken-4">
                                         <form>
                                           <div class="input-field col s12 z-depth-0">
-                                            <input class="orange lighten-3" id="search" type="search" ng-model="name">
+                                            <input class="orange lighten-3" id="search" type="search" ng-model="name" placeholder="Search...">
                                             <label for="search"><i class="material-icons grey-text text-darken-3">search</i></label>
                                           </div>
                                         </form>
