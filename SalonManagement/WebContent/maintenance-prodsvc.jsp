@@ -93,19 +93,15 @@
                                             <header><h4>Create Product & Service</h4></header>
                                                 <div class="row">
                                                     <form class="col s12">
-                                                        <div class="input-field col s4">
-                                                            <label class="red-text">(*) Indicates required field</label>
+                                                        <div class="input-field col s12 left">
+                                                            <label class="red-text center">(*) Indicates required field</label>
+                                                        </div><br><br>
+                                                        <div class="input-field col s12 center">
+                                                            <div class="center">
+                                                                <img  id="serviceimg" style="width: 120px; height: 120px;" src="./img/packIcon.png" alt="Image"/>
+                                                            </div>                                                    
                                                         </div>
-                                                        <div class="input-field col s12">
-                                                                <img  id="serviceimg" style="width: 120px; height: 120px;" src="" alt="Image"/>
-                                                        </div>
-                                                        <div class="input-field col s12" style="margin-top: 10px;">
-                                                              <select id="typeid">
-                                                                <option value="Product" selected>Product</option>
-                                                                <option value="Service">Service</option>
-                                                              </select>
-                                                              <label for="typeid">Type <span class="red-text">*</span></label>
-                                                        </div>
+                                                        
                                                         <div class="input-field col s12" style="margin-top: 30px;">
                                                             <div class="file-field">
                                                                   <div class="btn orange">
@@ -117,8 +113,17 @@
                                                                   </div>
                                                               </div>
                                                         </div>
+
+                                                        <div class="input-field col s12" style="margin-top: 10px;">
+                                                              <select id="typeid">
+                                                                <option value="Product" selected>Product</option>
+                                                                <option value="Service">Service</option>
+                                                              </select>
+                                                              <label for="typeid">Type <span class="red-text">*</span></label>
+                                                        </div>
+
                                                         <div class="input-field col s12">
-                                                            <input type="text" class="validate" id="servicename">
+                                                            <input type="text" class="validate" id="servicename" required>
                                                             <label for="servicename">Name <span class="red-text">*</span></label>
                                                         </div>
                                                         <div class="input-field col s12">
@@ -138,10 +143,12 @@
                                                             <input type="text" id="add-optname" class="validate">
                                                             <label for="add-optname">Another</label>
                                                         </div>
-                                                        <div class="input-field col s6 offset-s6">
-                                                            <input type="text" class="validate right-align" id="serviceprice" maxlength="8">
+
+                                                        <div class="input-field col s12">
+                                                            <input type="number" class="validate right-align" id="serviceprice" maxlength="8" required>
                                                             <label for="serviceprice">Price <span class="red-text">*</span></label>
                                                         </div>
+
                                                         <div class="input-field col s12 center">
                                                             <button class="waves-effect waves-light orange btn-flat" type="submit" value="Submit" id="servicebtn" onclick="success()">Create</button>
                                                             <button class="waves-effect waves-light btn-flat" type="reset" value="Reset" id="productclear">CLEAR</button>
@@ -209,17 +216,8 @@
                             </div>
                           </div>
                     </div>
-               
         </article>
-
-        
-
   </div>
-                
-
-
-
-    
 
   <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
@@ -290,8 +288,6 @@
       alert("Successfully Created!");
     }
     </script>
- 
 
   </body>
-
 </html>

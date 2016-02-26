@@ -15,7 +15,7 @@
             <nav class="white z-depth-barts">
               <div class="container">
                   <div class="nav-wrapper">
-                    <a href="#" class="brand-logo grey-text">Generic Salon System</a>
+                    <a href="#" class="brand-logo grey-text">Salon Management System</a>
                     <ul class="right hide-on-med-and-down">
                     </ul>
                   </div>
@@ -27,18 +27,19 @@
     <div class="wrapper">
             <aside class="aside aside-1 z-depth-barts">
                 <div class="row">
-                        <form class="col s12" action="admin-home.jsp">
+                        <form class="col s12" method="post" action="employeeMaintenance">
                             <div class="row">
                                 <div class="center">
                                   <h3>Login</h3>
                                 </div>
                                 <div class="input-field col s8 offset-s2">
-                                  <input type="text" id="username" class="validate">
+                                  <input name="username" type="text" id="username" class="validate">
                                   <label for="id">Username</label>
                                 </div>
                                 <div class="input-field col s8 offset-s2">
-                                  <input type="password" id="pass" class="validate">
+                                  <input name="pass" type="password" id="pass" class="validate">
                                   <label for="pass">Password</label>
+                                  
                                 </div>
                                 <div class="col s12" style="margin-top: 50px;">
                                   <button class="waves-effect waves-light orange btn-flat" type="submit" value="Submit" id="submitbtn">Login</button>

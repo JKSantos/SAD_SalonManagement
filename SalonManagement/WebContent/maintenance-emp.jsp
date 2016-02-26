@@ -92,16 +92,16 @@
         <article>
           <div class="wrapper">
                     <div class="aside aside1 z-depth-barts">
-                      <header><h4>Create Employee</h4><div class="divider"></div></header>
+                      <header><h4>Employee Maintenance</h4><div class="divider"></div></header>
 
                       <div class="row">
-                          <form class="col s12" action="createEmployee" onsubmit="return passvalidation()" enctype="multipart/form-data">
+                          <form class="col s12" action="createEmployee" onsubmit="return passvalidation()" method="post" enctype="multipart/form-data">
                               <div class="row">
                                   <div class="input-field col s4">
                                       <label class="red-text">(*) Indicates required field</label>
                                   </div>
                                   <div class="input-field col s6 offset-s2">
-                                      <img name="upload" id="employeeimg" style="width: 120px; height: 120px;" src="./img/anon.jpg" alt=""/>
+                                      <img  id="employeeimg" style="width: 120px; height: 120px;" src="./img/anon.jpg" alt=""/>
                                   </div>
                                   <div class="input-field col s4">
                                       <input id="empid" type="text" disabled="disabled">
@@ -111,26 +111,27 @@
                                       <div class="file-field">
                                             <div class="btn orange">
                                               <span class="">Image</span>
-                                              <input name="upload" type="file" accept="image/.jpg, image/.png" onchange="loadFile(event)">
+                                              <input name="upload" type="file" accept="image/jpeg,image/png" onchange="loadFile(event)">
                                             </div>
                                             <div class="file-path-wrapper">
-                                              <input name="strPath" value="image" class="file-path validate" type="text">
+                                              <input name="path" class="file-path validate" type="text" value="Image">
                                             </div>
                                         </div>
                                   </div>
                                   <div class="input-field col s4">
-                                      <input nime="strEmpFirstName" d="strEmpFirstName" type="text" class="validate active" required>
-                                      <label for="strEmpFirstName">First Name<span class="red-text">*</span></label>
+                                      <input name="strEmpFirstName" id="fname" type="text" class="validate active" required>
+                                      <label for="fname">First Name<span class="red-text">*</span></label>
                                   </div>
                                   <div class="input-field col s4">
-                                      <input name="strEmpMiddleName" id="strEmpMiddleName" type="text" class="validate">
-                                      <label for="strEmpMiddleName">Middle Name</label>
+                                      <input name="strEmpMiddleName" id="mname" type="text" class="validate">
+                                      <label for="mname">Middle Name</label>
                                   </div>
                                   <div class="input-field col s4">
-                                      <input name="strEmpLastName" id="strEmpLastName" type="text" class="validate" required>
-                                      <label for="strEmpLastName">Last Name<span class="red-text">*</span></label>
+                                      <input name="strEmpLastName" id="lname" type="text" class="validate" required>
+                                      <label for="lname">Last Name<span class="red-text">*</span></label>
                                   </div>
                                       <div class="input-field col s3">
+<<<<<<< HEAD
                                           <select id="month">
                                             <option value="jan">January</option>
                                             <option value="feb">February</option>
@@ -158,19 +159,49 @@
                                       <div class="input-field col s2 offset-s2">
                                           <input type="text" name="age" maxlength="3" class="validate" id="age" disabled="disabled">
                                           <label for="age">Age</label>
+=======
+                                          <select id="month" name="strMonth">
+                                              <option value="1">January</option>
+                                              <option value="2">February</option>
+                                              <option value="3">March</option>
+                                              <option value="4">April</option>
+                                              <option value="5">May</option>
+                                              <option value="6">June</option>
+                                              <option value="7">July</option>
+                                              <option value="8">August</option>
+                                              <option value="9">September</option>
+                                              <option value="10">October</option>
+                                              <option value="11">November</option>
+                                              <option value="12">December</option>
+                                          </select>
+                                          <label>Month <span class="red-text">*</span></label>
+                                        </div>
+                                        <div class="input-field col s2">
+                                          <input name="strDay" type="text" class="validate" id="day" maxlength="2">
+                                          <label for="day">Day <span class="red-text">*</span></label>
+                                        </div>
+                                        <div class="input-field col s3">
+                                          <input name="strYear" type="text" class="validate" id="year" maxlength="4">
+                                          <label for="year">Year <span class="red-text">*</span></label>
+                                        </div>
+                                      <div class="input-field col s4">
+                                          <input type="text" class="validate" disabled value="">
+                                          <label style="color: #9e9e9e;">Age: <span id="age"></span></label>
+                                          
+>>>>>>> dd7fd178ed30f5572fead6b230ef661f5975a86a
                                       </div>
                                   <div class="input-field col s6" >
-                                      <select required>
+                                      <select name="strEmpGender" required>
                                         <option value="" disabled selected></option>
-                                        <option value="1">Male</option>
-                                        <option value="2">Female</option>
+                                        <option value="M">Male</option>
+                                        <option value="F">Female</option>
                                       </select>
                                       <label>Gender <span class="red-text">*</span></label>
                                   </div>
-                                  <div class="input-field col s1 offset-s1">
+                                  <div class="input-field col s1">
                                     <p style="margin-top: 12px; margin-left: -7px;">(+63)</p>
                                   </div>
-                                  <div class="input-field col s4">
+                                  <div class="input-field col s5">
                                       <input name="strEmpContactNo" type="text" id="contact" class="validate" maxlength="10">
                                       <label for="contact">Contact Number</label>
                                   </div>
@@ -182,7 +213,7 @@
                                       <p style="color:#9e9e9e;font-size:12px;">Position <span class="red-text">*</span></p>
                                   </div>
                                   <div class="input-field col s5" style="margin-top: -1px;">
-                                      <select class="browser-default" id="slct1" name="selectedJob">
+                                      <select id="slct1" name="selectedJob" multiple="multiple">
                                           <option value="" disabled selected> </option>
                                           <c:forEach items="${empCategory}" var="name">
                                           	<option value="${name.strCategoryName}">${name.strCategoryName }</option>
@@ -209,7 +240,7 @@
                                       <label for="pass">Password <span id="pw1"></span></label>
                                   </div>
                                   <div class="input-field col s6 offset-s3">
-                                      <input type="password" class="validate" id="conf-pass" maxlength="20" onkeyup="checkPass(); return false;">
+                                      <input name="strEmpPassword2" type="password" class="validate" id="conf-pass" maxlength="20" onkeyup="checkPass(); return false;">
                                       <label for="conf-pass">Confirm Password <span id="pw2"></span></label>
                                   </div>
                                   <div class="input-field col s6 offset-s3">
@@ -217,10 +248,11 @@
                                   </div>
 
                                   <div class="input-field col s12"> 
-                                      <button class="waves-effect waves-white btn-flat orange" title="Create" type="submit" value="Submit" id="savebtn" disabled="disabled" onclick="success()">Next</button>
+                                      <button class="waves-effect waves-white btn-flat orange" title="Create" type="submit" value="Submit" id="savebtn" disabled="disabled" onclick="success()">Create</button>
                                       <button class="waves-effect waves-orange btn-flat white" type="reset" value="Reset" title="Clear">CLEAR</button>
                                   </div>
                               </div>
+
 
                               <!-- ADD OPTION POSITION -->
                                 
@@ -258,14 +290,20 @@
                                           </tr>
                                         </thead>
                                         <tbody>
+                                        
+                                        
+                                        	 <c:forEach items="${empList}" var="employee">
+                                        	 <tr>
+                                        	 	<td>${employee.intEmpID}</td>
+                                          		<td>${employee.strEmpFirstName} ${employee.strEmpLastName}</td>
+                                            	<td>Cashier</td>
+                                            	<td><a href="#update" style="padding: 0px;" class="waves-effect waves-orange modal-trigger transparent btn-flat"><i class="material-icons">edit</i></a><button style="padding: 0px; margin-left:15px;" class="waves-effect waves-orange transparent btn-flat"><i class="material-icons">delete</i></button></td>
+                                          		</tr>
+                                          	</c:forEach> 
+                                          
+                    
                                         <tr>
-                                            <td>1</td>
-                                            <td>John Angelo Castillo</td>
-                                            <td>Cashier</td>
-                                            <td><a href="#update" style="padding: 0px;" class="modal-trigger waves-effect waves-orange transparent btn-flat"><i class="material-icons">edit</i></a><button style="padding: 0px; margin-left:15px;" class="waves-effect waves-orange transparent btn-flat"><i class="material-icons">delete</i></button></td>
-                                        </tr>
-                                        </tbody>
-                                      </table>
+
                                       <ul class="pagination right">
                                             <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
                                             <li class="active orange"><a href="#!">1</a></li>
@@ -314,28 +352,28 @@
                                                   <label for="lname">Last Name</label>
                                               </div>
                                               <div class="input-field col s3">
-                                                  <select id="month">
-                                                    <option value="jan">January</option>
-                                                    <option value="feb">February</option>
-                                                    <option value="mar">March</option>
-                                                    <option value="apr">April</option>
-                                                    <option value="may">May</option>
-                                                    <option value="jun">June</option>
-                                                    <option value="jul">July</option>
-                                                    <option value="aug">August</option>
-                                                    <option value="sep">September</option>
-                                                    <option value="oct">October</option>
-                                                    <option value="nov">November</option>
-                                                    <option value="dec">December</option>
+                                                  <select name="strMonth" id="month">
+                                                    <option value="1">January</option>
+                                                    <option value="2">February</option>
+                                                    <option value="3">March</option>
+                                                    <option value="4">April</option>
+                                                    <option value="5">May</option>
+                                                    <option value="6">June</option>
+                                                    <option value="7">July</option>
+                                                    <option value="8">August</option>
+                                                    <option value="9">September</option>
+                                                    <option value="10">October</option>
+                                                    <option value="11">November</option>
+                                                    <option value="12">December</option>
                                                   </select>
                                                   <label for="month">Month</label>
                                               </div>
                                               <div class="input-field col s1">
-                                                  <input type="text" name="day" id="day" class="validate" maxlength="2">
+                                                  <input type="text" name="strDay" id="day" class="validate" maxlength="2">
                                                   <label for="day">Day</label>
                                               </div>
                                               <div class="input-field col s3">
-                                                  <input type="text" name="year" maxlength="4" class="validate" id="year">
+                                                  <input type="text" name="strYear" maxlength="4" class="validate" id="year">
                                                   <label for="year">Year</label>
                                               </div>
                                               <div class="input-field col s2 offset-s2">
@@ -343,7 +381,7 @@
                                                   <label for="age">Age</label>
                                               </div>
                                               <div class="input-field col s6" >
-                                                  <select>
+                                                  <select name="strEmpGender" required>
                                                     <option value="" disabled selected>Choose...</option>
                                                     <option value="1">Male</option>
                                                     <option value="2">Female</option>
@@ -358,7 +396,7 @@
                                                   <label for="number">Contact Number</label>
                                               </div>
                                               <div class="input-field col s12">
-                                                  <input name="adres" type="text" id="adres" class="validate">
+                                                  <input name="strEmpAddress" type="text" id="adres" class="validate">
                                                   <label for="adres">Address</label>
                                               </div>
                                               <div class="input-field col s12">
@@ -385,11 +423,11 @@
                                               </div>
                                               <div class="input-field col s6 offset-s3">
                                                   <input name="strEmpUsername" type="text" class="validate" id="un" maxlength="15" disabled="disabled">
-                                                  <label for="un">Username</label>
+                                                  <label for="strEmpUsername">Username</label>
                                               </div>
                                               <div class="input-field col s6 offset-s3">
                                                   <input name="strEmpPassword" type="password" class="validate" id="pw" maxlength="20" disabled="disabled">
-                                                  <label for="pw">Password <span id="pw1"></span></label>
+                                                  <label for="strEmpPassword">Password <span id="pw1"></span></label>
                                               </div>
                                               <div class="input-field col s6 offset-s3">
                                                   <input type="password" class="validate" id="conf-pw" maxlength="20" disabled="disabled">
