@@ -9,8 +9,29 @@
 	<constant name="struts.devMode" value="true" />
 	<constant name="struts.custom.i18n.resources"
 		value="ApplicationResources"/>
+	<constant name="struts.action.extension" value="html"/>
 
 	<package name="default" extends="struts-default" namespace="/">
+	 <!--
+		<result-types>
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
+		</result-types>
+		
+		<action name="index" class="controller.TemplateController"
+			method="execute">
+			<result name="success" type="tiles">/index</result>	
+		</action>
+		
+		<action name="aboutus" class="controller.TemplateController"
+			method="aboutus">
+			<result name="success" type="tiles">/aboutus</result>	
+		</action>
+		
+		<action name="news" class="controller.TemplateController"
+			method="news">
+			<result name="success" type="tiles">/news</result>	
+		</action>
+		  --> 
 		<action name="login" class="com.gss.actions.LogInAction" method="execute">
 			<result name="success">admin-home.jsp</result>
 			<result name="failed">loginform.jsp</result>

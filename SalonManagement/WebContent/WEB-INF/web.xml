@@ -5,7 +5,16 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
 	<display-name>SalonManagement</display-name>
+	<!-- 
+	<listener>
+    	<listener-class>org.apache.tiles.extras.complete.CompleteAutoloadTilesListener</listener-class>
+	</listener>
 	
+	<context-param>
+		<param-name>tilesDefinitions</param-name>
+		<param-value>/WEB-INF/tiles.xml</param-value>
+	</context-param>
+	 -->
 	<welcome-file-list>
 		<welcome-file>loginform.jsp</welcome-file>	
 	</welcome-file-list>
