@@ -216,17 +216,8 @@
                             </div>
                           </div>
                     </div>
-               
         </article>
-
-        
-
   </div>
-                
-
-
-
-    
 
   <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="./js/jquery-2.1.1.min.js"></script>
@@ -297,8 +288,6 @@
       alert("Successfully Created!");
     }
     </script>
- 
 
   </body>
-
 </html>
