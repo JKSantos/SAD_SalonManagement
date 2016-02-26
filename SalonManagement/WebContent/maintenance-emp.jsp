@@ -130,13 +130,34 @@
                                       <input name="strEmpLastName" id="strEmpLastName" type="text" class="validate" required>
                                       <label for="strEmpLastName">Last Name<span class="red-text">*</span></label>
                                   </div>
-                                      <div class="input-field col s6">
-                                        <input name="strEmpBirthdate" type="text" class="form-control docs-date" id="dob" name="date" onchange="calAge();" placeholder="Pick a date">
-                                        <label for="strEmpBirthdate">Birthday <span class="red-text">*</span></label>
+                                      <div class="input-field col s3">
+                                          <select id="month">
+                                            <option value="jan">January</option>
+                                            <option value="feb">February</option>
+                                            <option value="mar">March</option>
+                                            <option value="apr">April</option>
+                                            <option value="may">May</option>
+                                            <option value="jun">June</option>
+                                            <option value="jul">July</option>
+                                            <option value="aug">August</option>
+                                            <option value="sep">September</option>
+                                            <option value="oct">October</option>
+                                            <option value="nov">November</option>
+                                            <option value="dec">December</option>
+                                          </select>
+                                          <label for="month">Month <span class="red-text">*</span></label>
                                       </div>
-                                      <div class="input-field col s4 offset-s2">
-                                          <input type="text" class="validate" disabled value="" id="age">
-                                          <label style="color: #9e9e9e;">Age: </label>
+                                      <div class="input-field col s1">
+                                          <input type="text" name="day" id="day" class="validate" maxlength="2">
+                                          <label for="day">Day <span class="red-text">*</span></label>
+                                      </div>
+                                      <div class="input-field col s3">
+                                          <input type="text" name="year" maxlength="4" class="validate" id="year">
+                                          <label for="year">Year <span class="red-text">*</span></label>
+                                      </div>
+                                      <div class="input-field col s2 offset-s2">
+                                          <input type="text" name="age" maxlength="3" class="validate" id="age" disabled="disabled">
+                                          <label for="age">Age</label>
                                       </div>
                                   <div class="input-field col s6" >
                                       <select required>
