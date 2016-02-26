@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html ng-app>
+<%@ taglib uri="/struts-tags" prefix="s" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
   <head>
   <link rel="stylesheet" href="./css/materialize.min.css"  media="screen,projection"/>
   <link type="text/css" rel="stylesheet" href="./css/materialize.css"/>
@@ -28,7 +30,7 @@
                         <a class="collapsible-header active"><b>Maintenance</b></a>
                           <div class="collapsible-body">
                             <ul>
-                              <li class="orange"><a href="maintenance-emp.jsp">Employee</a></li>
+                              <li class="orange"><a href="employeeMaintenance.action">Employee</a></li>
                               <li><a href="maintenance-prodsvc.jsp">Product & Service</a></li>
                               <li><a href="maintenance-promdisc.jsp">Promo</a></li>
                               <li><a href="maintenance-package.jsp">Discount</a></li>
@@ -92,13 +94,13 @@
                       <header><h4>Create Employee</h4><div class="divider"></div></header>
 
                       <div class="row">
-                          <form class="col s12" action="" onsubmit="return passvalidation()">
+                          <form class="col s12" action="createEmployee" onsubmit="return passvalidation()" enctype="multipart/form-data">
                               <div class="row">
                                   <div class="input-field col s4">
                                       <label class="red-text">(*) Indicates required field</label>
                                   </div>
                                   <div class="input-field col s6 offset-s2">
-                                      <img  id="employeeimg" style="width: 120px; height: 120px;" src="./img/anon.jpg" alt=""/>
+                                      <img name="upload" id="employeeimg" style="width: 120px; height: 120px;" src="./img/anon.jpg" alt=""/>
                                   </div>
                                   <div class="input-field col s4">
                                       <input id="empid" type="text" disabled="disabled">
@@ -108,35 +110,35 @@
                                       <div class="file-field">
                                             <div class="btn orange">
                                               <span class="">Image</span>
-                                              <input type="file" accept="image/*" onchange="loadFile(event)">
+                                              <input name="upload" type="file" accept="image/.jpg, image/.png" onchange="loadFile(event)">
                                             </div>
                                             <div class="file-path-wrapper">
-                                              <input class="file-path validate" type="text">
+                                              <input name="strPath" value="image" class="file-path validate" type="text">
                                             </div>
                                         </div>
                                   </div>
                                   <div class="input-field col s4">
-                                      <input id="fname" type="text" class="validate active" required>
-                                      <label for="fname">First Name<span class="red-text">*</span></label>
+                                      <input nime="strEmpFirstName" d="strEmpFirstName" type="text" class="validate active" required>
+                                      <label for="strEmpFirstName">First Name<span class="red-text">*</span></label>
                                   </div>
                                   <div class="input-field col s4">
-                                      <input id="mname" type="text" class="validate">
-                                      <label for="mname">Middle Name</label>
+                                      <input name="strEmpMiddleName" id="strEmpMiddleName" type="text" class="validate">
+                                      <label for="strEmpMiddleName">Middle Name</label>
                                   </div>
                                   <div class="input-field col s4">
-                                      <input id="lname" type="text" class="validate" required>
-                                      <label for="lname">Last Name<span class="red-text">*</span></label>
+                                      <input name="strEmpLastName" id="strEmpLastName" type="text" class="validate" required>
+                                      <label for="strEmpLastName">Last Name<span class="red-text">*</span></label>
                                   </div>
                                       <div class="input-field col s6">
-                                        <input type="text" class="form-control docs-date" id="dob" name="date" onchange="calAge();" placeholder="Pick a date">
-                                        <label for="bday">Birthday <span class="red-text">*</span></label>
+                                        <input name="strEmpBirthdate" type="text" class="form-control docs-date" id="dob" name="date" onchange="calAge();" placeholder="Pick a date">
+                                        <label for="strEmpBirthdate">Birthday <span class="red-text">*</span></label>
                                       </div>
                                       <div class="input-field col s4 offset-s2">
                                           <input type="text" class="validate" disabled value="" id="age">
                                           <label style="color: #9e9e9e;">Age: </label>
                                       </div>
                                   <div class="input-field col s6" >
-                                      <select required>
+                                      <select class="browser-default" required>
                                         <option value="" disabled selected></option>
                                         <option value="1">Male</option>
                                         <option value="2">Female</option>
@@ -147,19 +149,22 @@
                                     <p style="margin-top: 12px; margin-left: -7px;">(+63)</p>
                                   </div>
                                   <div class="input-field col s4">
-                                      <input type="text" id="contact" class="validate" maxlength="10">
+                                      <input name="strEmpContactNo" type="text" id="contact" class="validate" maxlength="10">
                                       <label for="contact">Contact Number</label>
                                   </div>
                                   <div class="input-field col s12">
-                                      <input type="text" id="address" class="validate">
+                                      <input name="strEmpAddress" type="text" id="address" class="validate">
                                       <label for="address">Address <span class="red-text">*</span></label>
                                   </div>
                                   <div class="input-field col s12">
                                       <p style="color:#9e9e9e;font-size:12px;">Position <span class="red-text">*</span></p>
                                   </div>
                                   <div class="input-field col s5" style="margin-top: -1px;">
-                                      <select class="browser-default" id="slct1" name="slct1">
+                                      <select class="browser-default" id="slct1" name="selectedJob">
                                           <option value="" disabled selected> </option>
+                                          <c:forEach items="${empCategory}" var="name">
+                                          	<option value="${name.strCategoryName}">${name.strCategoryName }</option>
+                                          </c:forEach>
                                       </select>
                                   </div>
                                   <div class="input-field col s2" style="margin-top: -0.2px;">
@@ -174,11 +179,11 @@
                                       <h4>Account</h4>
                                   </div>
                                   <div class="input-field col s6 offset-s3">
-                                      <input type="text" class="validate" id="user" maxlength="15">
+                                      <input name="strEmpUsername" type="text" class="validate" id="user" maxlength="15">
                                       <label for="user">Username</label>
                                   </div>
                                   <div class="input-field col s6 offset-s3">
-                                      <input type="password" class="validate" id="pass" maxlength="20" onkeyup="checkPass(); return false;">
+                                      <input name="strEmpPassword" type="password" class="validate" id="pass" maxlength="20" onkeyup="checkPass(); return false;">
                                       <label for="pass">Password <span id="pw1"></span></label>
                                   </div>
                                   <div class="input-field col s6 offset-s3">
